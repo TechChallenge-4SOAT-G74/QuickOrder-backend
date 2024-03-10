@@ -19,13 +19,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          secrets: |
+            GIT_AUTH_TOKEN=${{ secrets.DOCKERHUB_TOKEN }}
+            
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
-      - name: Build and push Docker image
+        
+      - name: Build and push Docker
         uses: docker/build-push-action@v5
         with:
           context: .
-          load: true
+          push: true
           tags: quickorder:latest
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.DOCKERHUB_TOKEN }}
