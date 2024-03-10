@@ -39,18 +39,8 @@ jobs:
         uses: docker/setup-buildx-action@v3
         
       - name: Build and push Docker
-        run: |
-          docker compose -f docker-compose.yml push
-        uses: docker/build-push-action@v5
-        with:
-          context: .
-          file: src/docker-compose.yml
-          push: true
-          tags: quickorder-backend:latest
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
-          secrets: |
-            DOCKERHUB_TOKEN=${{ secrets.DOCKERHUB_TOKEN }}
+        run: docker-compose up -d
+
       - name: Inspect
         run: |
           docker image inspect quickorder-backend:latest
