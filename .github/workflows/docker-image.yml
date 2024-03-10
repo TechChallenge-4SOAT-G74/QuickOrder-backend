@@ -25,15 +25,7 @@ on:
 jobs:
   docker:
     runs-on: ubuntu-latest
-    steps:
-      - name: Set Repository Secret
-        run: |
-          gh secret set ${{ github.event.inputs.secret-name }} \
-          --body ${{ github.event.inputs.secret-value }} \
-          --repo ${{ github.event.inputs.repo-name }} 
-        env:
-          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}  
-          
+    steps:         
       - name: Checkout
         uses: actions/checkout@v4
         
