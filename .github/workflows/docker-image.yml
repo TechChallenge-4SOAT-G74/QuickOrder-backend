@@ -19,7 +19,7 @@ on:
         required: true
       repo-name:
         description: 'Repo Name'
-        default: ${{ github.repository }}
+        default: quickorder-backend
         required: true
         
 jobs:
@@ -43,10 +43,10 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ github.repository }}:latest
+          tags: quickorder-backend:latest
           secrets: |
             DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
             DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
       - name: Inspect
         run: |
-          docker image inspect ${{ github.repository }}:latest
+          docker image inspect quickorder-backend:latest
