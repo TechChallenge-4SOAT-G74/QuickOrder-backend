@@ -39,6 +39,8 @@ jobs:
         uses: docker/setup-buildx-action@v3
         
       - name: Build and push Docker
+        run: |
+          docker compose -f docker-compose.yml push
         uses: docker/build-push-action@v5
         with:
           context: .
