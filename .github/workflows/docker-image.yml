@@ -25,9 +25,9 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: quickorder:latest
+          tags: quickorder-backend:latest
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.DOCKERHUB_TOKEN }}
       - name: Inspect
         run: |
-          docker image inspect quickorder:latest 
+          docker image inspect quickorder-backend:latest 
