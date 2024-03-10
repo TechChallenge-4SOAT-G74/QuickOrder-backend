@@ -24,15 +24,15 @@ jobs:
       - name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ DOCKERHUB_USERNAME }}
-          password: ${{ DOCKERHUB_TOKEN }}
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build
         uses: docker/build-push-action@v5
         with:
           push: true
           tags: quickorder:latest
           secrets: |
-            GIT_AUTH_TOKEN=${{ secrets.MYTOKEN }}
+            GIT_AUTH_TOKEN=${{ secrets.DOCKERHUB_TOKEN }}
       - name: Inspect
         run: |
           docker image inspect quickorder:latest 
