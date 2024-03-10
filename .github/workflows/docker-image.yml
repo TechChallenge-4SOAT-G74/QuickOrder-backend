@@ -44,10 +44,10 @@ jobs:
           context: ./src
           file: src/Adapters/Driving/Api/Dockerfile
           push: true
-          tags: quickorder-backend:latest
+          tags: 28101976/quickorder-backend:latest
           secrets: |
             DOCKERHUB_TOKEN=${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Inspect
         run: |
-          docker image inspect quickorder-backend:latest
+          docker image inspect 28101976/quickorder-backend:latest
