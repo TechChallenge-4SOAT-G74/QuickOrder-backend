@@ -45,8 +45,7 @@ jobs:
           push: true
           tags: quickorder-backend:latest
           secrets: |
-            DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
-            DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+            DOCKERHUB_TOKEN=${{ secrets.DOCKERHUB_TOKEN }}
       - name: Inspect
         run: |
           docker image inspect quickorder-backend:latest
