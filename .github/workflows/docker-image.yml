@@ -45,6 +45,8 @@ jobs:
           file: src/Adapters/Driving/Api/Dockerfile
           push: true
           tags: quickorder-backend:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
           secrets: |
             DOCKERHUB_TOKEN=${{ secrets.DOCKERHUB_TOKEN }}
       - name: Inspect
