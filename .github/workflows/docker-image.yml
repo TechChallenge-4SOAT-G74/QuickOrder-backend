@@ -9,17 +9,29 @@ on:
     branches: [ "dev", "main" ]
   pull_request:
     branches: [ "dev", "main" ]
-  workflow_call:
-    secrets:
-      DOCKERHUB_USERNAME:
+  workflow_dispatch:
+    inputs:
+      secret-name:
+        default: 'DOCKERHUB_USERNAME'
         required: true
-      DOCKERHUB_PASSWORD:
+      secret-value:
+        default: 'DOCKERHUB_TOKEN'
         required: true
-
+      repo-name:
+        description: 'Repo Name'
+        default: 'quickorder-backend'
+        required: true
+        
 jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
+      - name: Set Repository Secret
+        run: |
+          gh secret set ${{ github.event.inputs.secret-name }} \
+          --body ${{ github.event.inputs.secret-value }} \
+          --repo ${{ github.event.inputs.repo-name }} 
+          
       - name: Checkout
         uses: actions/checkout@v4
         
