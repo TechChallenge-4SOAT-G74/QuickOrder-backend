@@ -1,17 +1,11 @@
 # Quick Order - Tech Challenge FIAP
 
-Projeto do Tech Challenge da FIAP - Fase 2
+Projeto do Tech Challenge da FIAP - Fase 3
 
-**INTEGRANTES DO GRUPO 36**
-
-* Matheus Augusto Silva dos Santos
-matheus.santos8192@outlook.com
+**INTEGRANTES DO GRUPO 74**
 
 * Moisés Barboza de Figueiredo Junior
 moises.figueiredo@gmail.com
-
-* Keilla Cristina Martins Conforto
-kcrismartins@gmail.com
 
 * Gabriela da Silva Lopes
 gabrieladslopes@gmail.com
