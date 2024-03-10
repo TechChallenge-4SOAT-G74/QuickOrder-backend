@@ -35,10 +35,8 @@ jobs:
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: "{{defaultContext}}"
           push: true
           tags: quickorder:latest
-          labels: quickorder:latest
           secrets: |
             GIT_AUTH_TOKEN=${{ secrets.DOCKERHUB_TOKEN }}
       - name: Inspect
