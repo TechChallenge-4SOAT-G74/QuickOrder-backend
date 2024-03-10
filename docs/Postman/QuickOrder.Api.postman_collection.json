@@ -1,0 +1,1442 @@
+{
+	"info": {
+		"_postman_id": "e9b0a120-7ac3-482d-88dc-0820860f04d4",
+		"name": "QuickOrder.Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "594142"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "Cliente",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "/api/Cliente/:id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Cliente/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Cliente",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Cliente/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Cliente",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/Cliente/:id",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Nome\": \"<string>\",\n  \"Cpf\": \"<string>\",\n  \"Email\": \"<string>\",\n  \"DDD\": \"<string>\",\n  \"Telefone\": \"<string>\",\n  \"DataNascimento\": \"<dateTime>\",\n  \"Status\": \"<boolean>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Cliente/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Cliente",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Nome\": \"<string>\",\n  \"Cpf\": \"<string>\",\n  \"Email\": \"<string>\",\n  \"DDD\": \"<string>\",\n  \"Telefone\": \"<string>\",\n  \"DataNascimento\": \"<dateTime>\",\n  \"Status\": \"<boolean>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Cliente/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Cliente",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/Cliente/:id",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Cliente/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Cliente",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Cliente/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Cliente",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/Cliente",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/api/Cliente"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/Cliente"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Cliente",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Nome\": \"<string>\",\n  \"Cpf\": \"<string>\",\n  \"Email\": \"<string>\",\n  \"DDD\": \"<string>\",\n  \"Telefone\": \"<string>\",\n  \"DataNascimento\": \"<dateTime>\",\n  \"Status\": \"<boolean>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/Cliente"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Nome\": \"<string>\",\n  \"Cpf\": \"<string>\",\n  \"Email\": \"<string>\",\n  \"DDD\": \"<string>\",\n  \"Telefone\": \"<string>\",\n  \"DataNascimento\": \"<dateTime>\",\n  \"Status\": \"<boolean>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/Cliente"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Funcionario",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "/api/Funcionario/:id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Funcionario/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Funcionario",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Funcionario/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Funcionario",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/Funcionario/:id",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Nome\": \"<string>\",\n  \"Cpf\": \"<string>\",\n  \"Email\": \"<string>\",\n  \"Matricula\": \"<integer>\",\n  \"Status\": \"<boolean>\",\n  \"Role\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Funcionario/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Funcionario",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Nome\": \"<string>\",\n  \"Cpf\": \"<string>\",\n  \"Email\": \"<string>\",\n  \"Matricula\": \"<integer>\",\n  \"Status\": \"<boolean>\",\n  \"Role\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Funcionario/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Funcionario",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/Funcionario/:id",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Funcionario/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Funcionario",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Funcionario/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Funcionario",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/Funcionario",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/api/Funcionario"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/Funcionario"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Funcionario",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Nome\": \"<string>\",\n  \"Cpf\": \"<string>\",\n  \"Email\": \"<string>\",\n  \"Matricula\": \"<integer>\",\n  \"Status\": \"<boolean>\",\n  \"Role\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/Funcionario"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Nome\": \"<string>\",\n  \"Cpf\": \"<string>\",\n  \"Email\": \"<string>\",\n  \"Matricula\": \"<integer>\",\n  \"Status\": \"<boolean>\",\n  \"Role\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/Funcionario"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Pedido",
+					"item": [
+						{
+							"name": "consultarpedido",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "/api/Pedido/consultarpedido/:id",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Pedido/consultarpedido/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Pedido",
+														"consultarpedido",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<integer>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/Pedido/consultarpedido/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Pedido",
+																"consultarpedido",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "consultarfilapedidos",
+							"item": [
+								{
+									"name": "/api/Pedido/consultarfilapedidos",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/Pedido/consultarfilapedidos"
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": "{{baseUrl}}/api/Pedido/consultarfilapedidos"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "criarpedido",
+							"item": [
+								{
+									"name": "/api/Pedido/criarpedido",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Pedido/criarpedido?numeroCliente=<integer>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Pedido",
+												"criarpedido"
+											],
+											"query": [
+												{
+													"key": "numeroCliente",
+													"value": "<integer>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Pedido/criarpedido?numeroCliente=<integer>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Pedido",
+														"criarpedido"
+													],
+													"query": [
+														{
+															"key": "numeroCliente",
+															"value": "<integer>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "adicionaritemaopedido",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "/api/Pedido/adicionaritemaopedido/:id",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"NumeroPedido\": \"<integer>\",\n  \"DataHoraInicio\": \"<dateTime>\",\n  \"DataHoraFinalizado\": \"<dateTime>\",\n  \"NumeroCliente\": \"<integer>\",\n  \"ProdutosItemsPedido\": [\n    {\n      \"Id\": \"<integer>\",\n      \"ProdutoItemId\": \"<integer>\",\n      \"ProdutoItem\": {\n        \"Id\": \"<integer>\",\n        \"ProdutoId\": \"<integer>\",\n        \"Produto\": {\n          \"Id\": \"<integer>\",\n          \"Nome\": {\n            \"Nome\": \"<string>\"\n          },\n          \"CategoriaId\": \"<integer>\",\n          \"Preco\": \"<double>\",\n          \"Descricao\": \"<string>\",\n          \"Foto\": \"<string>\",\n          \"ProdutoItens\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItem detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItem detected>\"\n            }\n          ]\n        },\n        \"ItemId\": \"<integer>\",\n        \"Item\": {\n          \"Id\": \"<integer>\",\n          \"TipoItem\": \"<integer>\",\n          \"Valor\": \"<double>\",\n          \"QuantidadeItem\": \"<integer>\",\n          \"ProdutoItens\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItem detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItem detected>\"\n            }\n          ]\n        },\n        \"Quantidade\": \"<integer>\",\n        \"QuantidadeMin\": \"<integer>\",\n        \"QuantidadeMax\": \"<integer>\",\n        \"PermitidoAlterar\": \"<boolean>\",\n        \"ProdutosItemsPedido\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n          }\n        ]\n      },\n      \"PedidoId\": \"<integer>\",\n      \"Pedido\": {\n        \"Id\": \"<integer>\",\n        \"NumeroPedido\": \"<integer>\",\n        \"CarrinhoId\": \"<string>\",\n        \"DataHoraInicio\": \"<dateTime>\",\n        \"DataHoraFinalizado\": \"<dateTime>\",\n        \"ClienteId\": \"<integer>\",\n        \"Cliente\": {\n          \"Id\": \"<integer>\",\n          \"Telefone\": {\n            \"DDD\": \"<string>\",\n            \"Numero\": \"<string>\"\n          },\n          \"DataNascimento\": \"<dateTime>\",\n          \"UsuarioId\": \"<integer>\",\n          \"Usuario\": {\n            \"Id\": \"<integer>\",\n            \"Nome\": {\n              \"Nome\": \"<string>\"\n            },\n            \"Cpf\": {\n              \"CodigoCpf\": \"<string>\"\n            },\n            \"Email\": {\n              \"Endereco\": \"<string>\"\n            },\n            \"Status\": \"<boolean>\",\n            \"Role\": \"<integer>\",\n            \"Clientes\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n              }\n            ],\n            \"Funcionarios\": [\n              {\n                \"Id\": \"<integer>\",\n                \"Matricula\": \"<integer>\",\n                \"UsuarioId\": \"<integer>\",\n                \"Usuario\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                }\n              },\n              {\n                \"Id\": \"<integer>\",\n                \"Matricula\": \"<integer>\",\n                \"UsuarioId\": \"<integer>\",\n                \"Usuario\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                }\n              }\n            ]\n          },\n          \"Pedidos\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n            }\n          ]\n        },\n        \"ProdutosItemsPedido\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n          }\n        ],\n        \"ValorPedido\": \"<double>\",\n        \"Observacao\": \"<string>\",\n        \"PedidoPago\": \"<boolean>\"\n      },\n      \"QuantidadeProduto\": \"<integer>\",\n      \"Pedidos\": [\n        {\n          \"Id\": \"<integer>\",\n          \"NumeroPedido\": \"<integer>\",\n          \"CarrinhoId\": \"<string>\",\n          \"DataHoraInicio\": \"<dateTime>\",\n          \"DataHoraFinalizado\": \"<dateTime>\",\n          \"ClienteId\": \"<integer>\",\n          \"Cliente\": {\n            \"Id\": \"<integer>\",\n            \"Telefone\": {\n              \"DDD\": \"<string>\",\n              \"Numero\": \"<string>\"\n            },\n            \"DataNascimento\": \"<dateTime>\",\n            \"UsuarioId\": \"<integer>\",\n            \"Usuario\": {\n              \"Id\": \"<integer>\",\n              \"Nome\": {\n                \"Nome\": \"<string>\"\n              },\n              \"Cpf\": {\n                \"CodigoCpf\": \"<string>\"\n              },\n              \"Email\": {\n                \"Endereco\": \"<string>\"\n              },\n              \"Status\": \"<boolean>\",\n              \"Role\": \"<integer>\",\n              \"Clientes\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n                }\n              ],\n              \"Funcionarios\": [\n                {\n                  \"Id\": \"<integer>\",\n                  \"Matricula\": \"<integer>\",\n                  \"UsuarioId\": \"<integer>\",\n                  \"Usuario\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                  }\n                },\n                {\n                  \"Id\": \"<integer>\",\n                  \"Matricula\": \"<integer>\",\n                  \"UsuarioId\": \"<integer>\",\n                  \"Usuario\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                  }\n                }\n              ]\n            },\n            \"Pedidos\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n              }\n            ]\n          },\n          \"ProdutosItemsPedido\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n            }\n          ],\n          \"ValorPedido\": \"<double>\",\n          \"Observacao\": \"<string>\",\n          \"PedidoPago\": \"<boolean>\"\n        },\n        {\n          \"Id\": \"<integer>\",\n          \"NumeroPedido\": \"<integer>\",\n          \"CarrinhoId\": \"<string>\",\n          \"DataHoraInicio\": \"<dateTime>\",\n          \"DataHoraFinalizado\": \"<dateTime>\",\n          \"ClienteId\": \"<integer>\",\n          \"Cliente\": {\n            \"Id\": \"<integer>\",\n            \"Telefone\": {\n              \"DDD\": \"<string>\",\n              \"Numero\": \"<string>\"\n            },\n            \"DataNascimento\": \"<dateTime>\",\n            \"UsuarioId\": \"<integer>\",\n            \"Usuario\": {\n              \"Id\": \"<integer>\",\n              \"Nome\": {\n                \"Nome\": \"<string>\"\n              },\n              \"Cpf\": {\n                \"CodigoCpf\": \"<string>\"\n              },\n              \"Email\": {\n                \"Endereco\": \"<string>\"\n              },\n              \"Status\": \"<boolean>\",\n              \"Role\": \"<integer>\",\n              \"Clientes\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n                }\n              ],\n              \"Funcionarios\": [\n                {\n                  \"Id\": \"<integer>\",\n                  \"Matricula\": \"<integer>\",\n                  \"UsuarioId\": \"<integer>\",\n                  \"Usuario\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                  }\n                },\n                {\n                  \"Id\": \"<integer>\",\n                  \"Matricula\": \"<integer>\",\n                  \"UsuarioId\": \"<integer>\",\n                  \"Usuario\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                  }\n                }\n              ]\n            },\n            \"Pedidos\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n              }\n            ]\n          },\n          \"ProdutosItemsPedido\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n            }\n          ],\n          \"ValorPedido\": \"<double>\",\n          \"Observacao\": \"<string>\",\n          \"PedidoPago\": \"<boolean>\"\n        }\n      ]\n    },\n    {\n      \"Id\": \"<integer>\",\n      \"ProdutoItemId\": \"<integer>\",\n      \"ProdutoItem\": {\n        \"Id\": \"<integer>\",\n        \"ProdutoId\": \"<integer>\",\n        \"Produto\": {\n          \"Id\": \"<integer>\",\n          \"Nome\": {\n            \"Nome\": \"<string>\"\n          },\n          \"CategoriaId\": \"<integer>\",\n          \"Preco\": \"<double>\",\n          \"Descricao\": \"<string>\",\n          \"Foto\": \"<string>\",\n          \"ProdutoItens\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItem detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItem detected>\"\n            }\n          ]\n        },\n        \"ItemId\": \"<integer>\",\n        \"Item\": {\n          \"Id\": \"<integer>\",\n          \"TipoItem\": \"<integer>\",\n          \"Valor\": \"<double>\",\n          \"QuantidadeItem\": \"<integer>\",\n          \"ProdutoItens\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItem detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItem detected>\"\n            }\n          ]\n        },\n        \"Quantidade\": \"<integer>\",\n        \"QuantidadeMin\": \"<integer>\",\n        \"QuantidadeMax\": \"<integer>\",\n        \"PermitidoAlterar\": \"<boolean>\",\n        \"ProdutosItemsPedido\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n          }\n        ]\n      },\n      \"PedidoId\": \"<integer>\",\n      \"Pedido\": {\n        \"Id\": \"<integer>\",\n        \"NumeroPedido\": \"<integer>\",\n        \"CarrinhoId\": \"<string>\",\n        \"DataHoraInicio\": \"<dateTime>\",\n        \"DataHoraFinalizado\": \"<dateTime>\",\n        \"ClienteId\": \"<integer>\",\n        \"Cliente\": {\n          \"Id\": \"<integer>\",\n          \"Telefone\": {\n            \"DDD\": \"<string>\",\n            \"Numero\": \"<string>\"\n          },\n          \"DataNascimento\": \"<dateTime>\",\n          \"UsuarioId\": \"<integer>\",\n          \"Usuario\": {\n            \"Id\": \"<integer>\",\n            \"Nome\": {\n              \"Nome\": \"<string>\"\n            },\n            \"Cpf\": {\n              \"CodigoCpf\": \"<string>\"\n            },\n            \"Email\": {\n              \"Endereco\": \"<string>\"\n            },\n            \"Status\": \"<boolean>\",\n            \"Role\": \"<integer>\",\n            \"Clientes\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n              }\n            ],\n            \"Funcionarios\": [\n              {\n                \"Id\": \"<integer>\",\n                \"Matricula\": \"<integer>\",\n                \"UsuarioId\": \"<integer>\",\n                \"Usuario\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                }\n              },\n              {\n                \"Id\": \"<integer>\",\n                \"Matricula\": \"<integer>\",\n                \"UsuarioId\": \"<integer>\",\n                \"Usuario\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                }\n              }\n            ]\n          },\n          \"Pedidos\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n            }\n          ]\n        },\n        \"ProdutosItemsPedido\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n          }\n        ],\n        \"ValorPedido\": \"<double>\",\n        \"Observacao\": \"<string>\",\n        \"PedidoPago\": \"<boolean>\"\n      },\n      \"QuantidadeProduto\": \"<integer>\",\n      \"Pedidos\": [\n        {\n          \"Id\": \"<integer>\",\n          \"NumeroPedido\": \"<integer>\",\n          \"CarrinhoId\": \"<string>\",\n          \"DataHoraInicio\": \"<dateTime>\",\n          \"DataHoraFinalizado\": \"<dateTime>\",\n          \"ClienteId\": \"<integer>\",\n          \"Cliente\": {\n            \"Id\": \"<integer>\",\n            \"Telefone\": {\n              \"DDD\": \"<string>\",\n              \"Numero\": \"<string>\"\n            },\n            \"DataNascimento\": \"<dateTime>\",\n            \"UsuarioId\": \"<integer>\",\n            \"Usuario\": {\n              \"Id\": \"<integer>\",\n              \"Nome\": {\n                \"Nome\": \"<string>\"\n              },\n              \"Cpf\": {\n                \"CodigoCpf\": \"<string>\"\n              },\n              \"Email\": {\n                \"Endereco\": \"<string>\"\n              },\n              \"Status\": \"<boolean>\",\n              \"Role\": \"<integer>\",\n              \"Clientes\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n                }\n              ],\n              \"Funcionarios\": [\n                {\n                  \"Id\": \"<integer>\",\n                  \"Matricula\": \"<integer>\",\n                  \"UsuarioId\": \"<integer>\",\n                  \"Usuario\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                  }\n                },\n                {\n                  \"Id\": \"<integer>\",\n                  \"Matricula\": \"<integer>\",\n                  \"UsuarioId\": \"<integer>\",\n                  \"Usuario\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                  }\n                }\n              ]\n            },\n            \"Pedidos\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n              }\n            ]\n          },\n          \"ProdutosItemsPedido\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n            }\n          ],\n          \"ValorPedido\": \"<double>\",\n          \"Observacao\": \"<string>\",\n          \"PedidoPago\": \"<boolean>\"\n        },\n        {\n          \"Id\": \"<integer>\",\n          \"NumeroPedido\": \"<integer>\",\n          \"CarrinhoId\": \"<string>\",\n          \"DataHoraInicio\": \"<dateTime>\",\n          \"DataHoraFinalizado\": \"<dateTime>\",\n          \"ClienteId\": \"<integer>\",\n          \"Cliente\": {\n            \"Id\": \"<integer>\",\n            \"Telefone\": {\n              \"DDD\": \"<string>\",\n              \"Numero\": \"<string>\"\n            },\n            \"DataNascimento\": \"<dateTime>\",\n            \"UsuarioId\": \"<integer>\",\n            \"Usuario\": {\n              \"Id\": \"<integer>\",\n              \"Nome\": {\n                \"Nome\": \"<string>\"\n              },\n              \"Cpf\": {\n                \"CodigoCpf\": \"<string>\"\n              },\n              \"Email\": {\n                \"Endereco\": \"<string>\"\n              },\n              \"Status\": \"<boolean>\",\n              \"Role\": \"<integer>\",\n              \"Clientes\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n                }\n              ],\n              \"Funcionarios\": [\n                {\n                  \"Id\": \"<integer>\",\n                  \"Matricula\": \"<integer>\",\n                  \"UsuarioId\": \"<integer>\",\n                  \"Usuario\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                  }\n                },\n                {\n                  \"Id\": \"<integer>\",\n                  \"Matricula\": \"<integer>\",\n                  \"UsuarioId\": \"<integer>\",\n                  \"Usuario\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                  }\n                }\n              ]\n            },\n            \"Pedidos\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n              }\n            ]\n          },\n          \"ProdutosItemsPedido\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n            }\n          ],\n          \"ValorPedido\": \"<double>\",\n          \"Observacao\": \"<string>\",\n          \"PedidoPago\": \"<boolean>\"\n        }\n      ]\n    }\n  ],\n  \"ValorPedido\": \"<double>\",\n  \"Observacao\": \"<string>\",\n  \"PedidoPago\": \"<boolean>\",\n  \"StatusPedido\": \"<string>\",\n  \"CarrinhoId\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Pedido/adicionaritemaopedido/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Pedido",
+														"adicionaritemaopedido",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"NumeroPedido\": \"<integer>\",\n  \"DataHoraInicio\": \"<dateTime>\",\n  \"DataHoraFinalizado\": \"<dateTime>\",\n  \"NumeroCliente\": \"<integer>\",\n  \"ProdutosItemsPedido\": [\n    {\n      \"Id\": \"<integer>\",\n      \"ProdutoItemId\": \"<integer>\",\n      \"ProdutoItem\": {\n        \"Id\": \"<integer>\",\n        \"ProdutoId\": \"<integer>\",\n        \"Produto\": {\n          \"Id\": \"<integer>\",\n          \"Nome\": {\n            \"Nome\": \"<string>\"\n          },\n          \"CategoriaId\": \"<integer>\",\n          \"Preco\": \"<double>\",\n          \"Descricao\": \"<string>\",\n          \"Foto\": \"<string>\",\n          \"ProdutoItens\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItem detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItem detected>\"\n            }\n          ]\n        },\n        \"ItemId\": \"<integer>\",\n        \"Item\": {\n          \"Id\": \"<integer>\",\n          \"TipoItem\": \"<integer>\",\n          \"Valor\": \"<double>\",\n          \"QuantidadeItem\": \"<integer>\",\n          \"ProdutoItens\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItem detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItem detected>\"\n            }\n          ]\n        },\n        \"Quantidade\": \"<integer>\",\n        \"QuantidadeMin\": \"<integer>\",\n        \"QuantidadeMax\": \"<integer>\",\n        \"PermitidoAlterar\": \"<boolean>\",\n        \"ProdutosItemsPedido\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n          }\n        ]\n      },\n      \"PedidoId\": \"<integer>\",\n      \"Pedido\": {\n        \"Id\": \"<integer>\",\n        \"NumeroPedido\": \"<integer>\",\n        \"CarrinhoId\": \"<string>\",\n        \"DataHoraInicio\": \"<dateTime>\",\n        \"DataHoraFinalizado\": \"<dateTime>\",\n        \"ClienteId\": \"<integer>\",\n        \"Cliente\": {\n          \"Id\": \"<integer>\",\n          \"Telefone\": {\n            \"DDD\": \"<string>\",\n            \"Numero\": \"<string>\"\n          },\n          \"DataNascimento\": \"<dateTime>\",\n          \"UsuarioId\": \"<integer>\",\n          \"Usuario\": {\n            \"Id\": \"<integer>\",\n            \"Nome\": {\n              \"Nome\": \"<string>\"\n            },\n            \"Cpf\": {\n              \"CodigoCpf\": \"<string>\"\n            },\n            \"Email\": {\n              \"Endereco\": \"<string>\"\n            },\n            \"Status\": \"<boolean>\",\n            \"Role\": \"<integer>\",\n            \"Clientes\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n              }\n            ],\n            \"Funcionarios\": [\n              {\n                \"Id\": \"<integer>\",\n                \"Matricula\": \"<integer>\",\n                \"UsuarioId\": \"<integer>\",\n                \"Usuario\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                }\n              },\n              {\n                \"Id\": \"<integer>\",\n                \"Matricula\": \"<integer>\",\n                \"UsuarioId\": \"<integer>\",\n                \"Usuario\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                }\n              }\n            ]\n          },\n          \"Pedidos\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n            }\n          ]\n        },\n        \"ProdutosItemsPedido\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n          }\n        ],\n        \"ValorPedido\": \"<double>\",\n        \"Observacao\": \"<string>\",\n        \"PedidoPago\": \"<boolean>\"\n      },\n      \"QuantidadeProduto\": \"<integer>\",\n      \"Pedidos\": [\n        {\n          \"Id\": \"<integer>\",\n          \"NumeroPedido\": \"<integer>\",\n          \"CarrinhoId\": \"<string>\",\n          \"DataHoraInicio\": \"<dateTime>\",\n          \"DataHoraFinalizado\": \"<dateTime>\",\n          \"ClienteId\": \"<integer>\",\n          \"Cliente\": {\n            \"Id\": \"<integer>\",\n            \"Telefone\": {\n              \"DDD\": \"<string>\",\n              \"Numero\": \"<string>\"\n            },\n            \"DataNascimento\": \"<dateTime>\",\n            \"UsuarioId\": \"<integer>\",\n            \"Usuario\": {\n              \"Id\": \"<integer>\",\n              \"Nome\": {\n                \"Nome\": \"<string>\"\n              },\n              \"Cpf\": {\n                \"CodigoCpf\": \"<string>\"\n              },\n              \"Email\": {\n                \"Endereco\": \"<string>\"\n              },\n              \"Status\": \"<boolean>\",\n              \"Role\": \"<integer>\",\n              \"Clientes\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n                }\n              ],\n              \"Funcionarios\": [\n                {\n                  \"Id\": \"<integer>\",\n                  \"Matricula\": \"<integer>\",\n                  \"UsuarioId\": \"<integer>\",\n                  \"Usuario\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                  }\n                },\n                {\n                  \"Id\": \"<integer>\",\n                  \"Matricula\": \"<integer>\",\n                  \"UsuarioId\": \"<integer>\",\n                  \"Usuario\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                  }\n                }\n              ]\n            },\n            \"Pedidos\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n              }\n            ]\n          },\n          \"ProdutosItemsPedido\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n            }\n          ],\n          \"ValorPedido\": \"<double>\",\n          \"Observacao\": \"<string>\",\n          \"PedidoPago\": \"<boolean>\"\n        },\n        {\n          \"Id\": \"<integer>\",\n          \"NumeroPedido\": \"<integer>\",\n          \"CarrinhoId\": \"<string>\",\n          \"DataHoraInicio\": \"<dateTime>\",\n          \"DataHoraFinalizado\": \"<dateTime>\",\n          \"ClienteId\": \"<integer>\",\n          \"Cliente\": {\n            \"Id\": \"<integer>\",\n            \"Telefone\": {\n              \"DDD\": \"<string>\",\n              \"Numero\": \"<string>\"\n            },\n            \"DataNascimento\": \"<dateTime>\",\n            \"UsuarioId\": \"<integer>\",\n            \"Usuario\": {\n              \"Id\": \"<integer>\",\n              \"Nome\": {\n                \"Nome\": \"<string>\"\n              },\n              \"Cpf\": {\n                \"CodigoCpf\": \"<string>\"\n              },\n              \"Email\": {\n                \"Endereco\": \"<string>\"\n              },\n              \"Status\": \"<boolean>\",\n              \"Role\": \"<integer>\",\n              \"Clientes\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n                }\n              ],\n              \"Funcionarios\": [\n                {\n                  \"Id\": \"<integer>\",\n                  \"Matricula\": \"<integer>\",\n                  \"UsuarioId\": \"<integer>\",\n                  \"Usuario\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                  }\n                },\n                {\n                  \"Id\": \"<integer>\",\n                  \"Matricula\": \"<integer>\",\n                  \"UsuarioId\": \"<integer>\",\n                  \"Usuario\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                  }\n                }\n              ]\n            },\n            \"Pedidos\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n              }\n            ]\n          },\n          \"ProdutosItemsPedido\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n            }\n          ],\n          \"ValorPedido\": \"<double>\",\n          \"Observacao\": \"<string>\",\n          \"PedidoPago\": \"<boolean>\"\n        }\n      ]\n    },\n    {\n      \"Id\": \"<integer>\",\n      \"ProdutoItemId\": \"<integer>\",\n      \"ProdutoItem\": {\n        \"Id\": \"<integer>\",\n        \"ProdutoId\": \"<integer>\",\n        \"Produto\": {\n          \"Id\": \"<integer>\",\n          \"Nome\": {\n            \"Nome\": \"<string>\"\n          },\n          \"CategoriaId\": \"<integer>\",\n          \"Preco\": \"<double>\",\n          \"Descricao\": \"<string>\",\n          \"Foto\": \"<string>\",\n          \"ProdutoItens\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItem detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItem detected>\"\n            }\n          ]\n        },\n        \"ItemId\": \"<integer>\",\n        \"Item\": {\n          \"Id\": \"<integer>\",\n          \"TipoItem\": \"<integer>\",\n          \"Valor\": \"<double>\",\n          \"QuantidadeItem\": \"<integer>\",\n          \"ProdutoItens\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItem detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItem detected>\"\n            }\n          ]\n        },\n        \"Quantidade\": \"<integer>\",\n        \"QuantidadeMin\": \"<integer>\",\n        \"QuantidadeMax\": \"<integer>\",\n        \"PermitidoAlterar\": \"<boolean>\",\n        \"ProdutosItemsPedido\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n          }\n        ]\n      },\n      \"PedidoId\": \"<integer>\",\n      \"Pedido\": {\n        \"Id\": \"<integer>\",\n        \"NumeroPedido\": \"<integer>\",\n        \"CarrinhoId\": \"<string>\",\n        \"DataHoraInicio\": \"<dateTime>\",\n        \"DataHoraFinalizado\": \"<dateTime>\",\n        \"ClienteId\": \"<integer>\",\n        \"Cliente\": {\n          \"Id\": \"<integer>\",\n          \"Telefone\": {\n            \"DDD\": \"<string>\",\n            \"Numero\": \"<string>\"\n          },\n          \"DataNascimento\": \"<dateTime>\",\n          \"UsuarioId\": \"<integer>\",\n          \"Usuario\": {\n            \"Id\": \"<integer>\",\n            \"Nome\": {\n              \"Nome\": \"<string>\"\n            },\n            \"Cpf\": {\n              \"CodigoCpf\": \"<string>\"\n            },\n            \"Email\": {\n              \"Endereco\": \"<string>\"\n            },\n            \"Status\": \"<boolean>\",\n            \"Role\": \"<integer>\",\n            \"Clientes\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n              }\n            ],\n            \"Funcionarios\": [\n              {\n                \"Id\": \"<integer>\",\n                \"Matricula\": \"<integer>\",\n                \"UsuarioId\": \"<integer>\",\n                \"Usuario\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                }\n              },\n              {\n                \"Id\": \"<integer>\",\n                \"Matricula\": \"<integer>\",\n                \"UsuarioId\": \"<integer>\",\n                \"Usuario\": {\n                  \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                }\n              }\n            ]\n          },\n          \"Pedidos\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n            }\n          ]\n        },\n        \"ProdutosItemsPedido\": [\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n          },\n          {\n            \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n          }\n        ],\n        \"ValorPedido\": \"<double>\",\n        \"Observacao\": \"<string>\",\n        \"PedidoPago\": \"<boolean>\"\n      },\n      \"QuantidadeProduto\": \"<integer>\",\n      \"Pedidos\": [\n        {\n          \"Id\": \"<integer>\",\n          \"NumeroPedido\": \"<integer>\",\n          \"CarrinhoId\": \"<string>\",\n          \"DataHoraInicio\": \"<dateTime>\",\n          \"DataHoraFinalizado\": \"<dateTime>\",\n          \"ClienteId\": \"<integer>\",\n          \"Cliente\": {\n            \"Id\": \"<integer>\",\n            \"Telefone\": {\n              \"DDD\": \"<string>\",\n              \"Numero\": \"<string>\"\n            },\n            \"DataNascimento\": \"<dateTime>\",\n            \"UsuarioId\": \"<integer>\",\n            \"Usuario\": {\n              \"Id\": \"<integer>\",\n              \"Nome\": {\n                \"Nome\": \"<string>\"\n              },\n              \"Cpf\": {\n                \"CodigoCpf\": \"<string>\"\n              },\n              \"Email\": {\n                \"Endereco\": \"<string>\"\n              },\n              \"Status\": \"<boolean>\",\n              \"Role\": \"<integer>\",\n              \"Clientes\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n                }\n              ],\n              \"Funcionarios\": [\n                {\n                  \"Id\": \"<integer>\",\n                  \"Matricula\": \"<integer>\",\n                  \"UsuarioId\": \"<integer>\",\n                  \"Usuario\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                  }\n                },\n                {\n                  \"Id\": \"<integer>\",\n                  \"Matricula\": \"<integer>\",\n                  \"UsuarioId\": \"<integer>\",\n                  \"Usuario\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                  }\n                }\n              ]\n            },\n            \"Pedidos\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n              }\n            ]\n          },\n          \"ProdutosItemsPedido\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n            }\n          ],\n          \"ValorPedido\": \"<double>\",\n          \"Observacao\": \"<string>\",\n          \"PedidoPago\": \"<boolean>\"\n        },\n        {\n          \"Id\": \"<integer>\",\n          \"NumeroPedido\": \"<integer>\",\n          \"CarrinhoId\": \"<string>\",\n          \"DataHoraInicio\": \"<dateTime>\",\n          \"DataHoraFinalizado\": \"<dateTime>\",\n          \"ClienteId\": \"<integer>\",\n          \"Cliente\": {\n            \"Id\": \"<integer>\",\n            \"Telefone\": {\n              \"DDD\": \"<string>\",\n              \"Numero\": \"<string>\"\n            },\n            \"DataNascimento\": \"<dateTime>\",\n            \"UsuarioId\": \"<integer>\",\n            \"Usuario\": {\n              \"Id\": \"<integer>\",\n              \"Nome\": {\n                \"Nome\": \"<string>\"\n              },\n              \"Cpf\": {\n                \"CodigoCpf\": \"<string>\"\n              },\n              \"Email\": {\n                \"Endereco\": \"<string>\"\n              },\n              \"Status\": \"<boolean>\",\n              \"Role\": \"<integer>\",\n              \"Clientes\": [\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n                },\n                {\n                  \"value\": \"<Circular reference to #/components/schemas/Cliente detected>\"\n                }\n              ],\n              \"Funcionarios\": [\n                {\n                  \"Id\": \"<integer>\",\n                  \"Matricula\": \"<integer>\",\n                  \"UsuarioId\": \"<integer>\",\n                  \"Usuario\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                  }\n                },\n                {\n                  \"Id\": \"<integer>\",\n                  \"Matricula\": \"<integer>\",\n                  \"UsuarioId\": \"<integer>\",\n                  \"Usuario\": {\n                    \"value\": \"<Circular reference to #/components/schemas/Usuario detected>\"\n                  }\n                }\n              ]\n            },\n            \"Pedidos\": [\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n              },\n              {\n                \"value\": \"<Circular reference to #/components/schemas/Pedido detected>\"\n              }\n            ]\n          },\n          \"ProdutosItemsPedido\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/ProdutoItemPedido detected>\"\n            }\n          ],\n          \"ValorPedido\": \"<double>\",\n          \"Observacao\": \"<string>\",\n          \"PedidoPago\": \"<boolean>\"\n        }\n      ]\n    }\n  ],\n  \"ValorPedido\": \"<double>\",\n  \"Observacao\": \"<string>\",\n  \"PedidoPago\": \"<boolean>\",\n  \"StatusPedido\": \"<string>\",\n  \"CarrinhoId\": \"<string>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/Pedido/adicionaritemaopedido/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Pedido",
+																"adicionaritemaopedido",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "confirmapedido",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "/api/Pedido/confirmapedido/:id",
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Pedido/confirmapedido/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Pedido",
+														"confirmapedido",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<integer>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/Pedido/confirmapedido/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Pedido",
+																"confirmapedido",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "confirmapagamentopedido",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "/api/Pedido/confirmapagamentopedido/:id",
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Pedido/confirmapagamentopedido/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Pedido",
+														"confirmapagamentopedido",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<integer>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/Pedido/confirmapagamentopedido/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Pedido",
+																"confirmapagamentopedido",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "alterarstatuspedido",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "/api/Pedido/alterarstatuspedido/:id",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Id\": \"<string>\",\n  \"NumeroPedido\": \"<integer>\",\n  \"StatusPedido\": \"<string>\",\n  \"DataAtualizacao\": \"<dateTime>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Pedido/alterarstatuspedido/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Pedido",
+														"alterarstatuspedido",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"Id\": \"<string>\",\n  \"NumeroPedido\": \"<integer>\",\n  \"StatusPedido\": \"<string>\",\n  \"DataAtualizacao\": \"<dateTime>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/Pedido/alterarstatuspedido/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Pedido",
+																"alterarstatuspedido",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "cancelarpedido",
+							"item": [
+								{
+									"name": "{carrinhoId}",
+									"item": [
+										{
+											"name": "/api/Pedido/cancelarpedido/:carrinhoId",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Pedido/cancelarpedido/:carrinhoId",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Pedido",
+														"cancelarpedido",
+														":carrinhoId"
+													],
+													"variable": [
+														{
+															"key": "carrinhoId",
+															"value": "<string>",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/Pedido/cancelarpedido/:carrinhoId",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Pedido",
+																"cancelarpedido",
+																":carrinhoId"
+															],
+															"variable": [
+																{
+																	"key": "carrinhoId"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"body": ""
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Produto",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "/api/Produto/:id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Produto/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Produto",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Produto/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Produto",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/Produto/:id",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Nome\": \"<string>\",\n  \"Categoria\": \"<string>\",\n  \"Preco\": \"<double>\",\n  \"Descricao\": \"<string>\",\n  \"Foto\": \"<string>\",\n  \"ProdutoItens\": [\n    {\n      \"Item\": {\n        \"Id\": \"<integer>\",\n        \"TipoItem\": \"<string>\",\n        \"Valor\": \"<double>\",\n        \"QuantidadeItem\": \"<integer>\"\n      },\n      \"Quantidade\": \"<integer>\",\n      \"QuantidadeMin\": \"<integer>\",\n      \"QuantidadeMax\": \"<integer>\",\n      \"PermitidoAlterar\": \"<boolean>\"\n    },\n    {\n      \"Item\": {\n        \"Id\": \"<integer>\",\n        \"TipoItem\": \"<string>\",\n        \"Valor\": \"<double>\",\n        \"QuantidadeItem\": \"<integer>\"\n      },\n      \"Quantidade\": \"<integer>\",\n      \"QuantidadeMin\": \"<integer>\",\n      \"QuantidadeMax\": \"<integer>\",\n      \"PermitidoAlterar\": \"<boolean>\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/Produto/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Produto",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"Nome\": \"<string>\",\n  \"Categoria\": \"<string>\",\n  \"Preco\": \"<double>\",\n  \"Descricao\": \"<string>\",\n  \"Foto\": \"<string>\",\n  \"ProdutoItens\": [\n    {\n      \"Item\": {\n        \"Id\": \"<integer>\",\n        \"TipoItem\": \"<string>\",\n        \"Valor\": \"<double>\",\n        \"QuantidadeItem\": \"<integer>\"\n      },\n      \"Quantidade\": \"<integer>\",\n      \"QuantidadeMin\": \"<integer>\",\n      \"QuantidadeMax\": \"<integer>\",\n      \"PermitidoAlterar\": \"<boolean>\"\n    },\n    {\n      \"Item\": {\n        \"Id\": \"<integer>\",\n        \"TipoItem\": \"<string>\",\n        \"Valor\": \"<double>\",\n        \"QuantidadeItem\": \"<integer>\"\n      },\n      \"Quantidade\": \"<integer>\",\n      \"QuantidadeMin\": \"<integer>\",\n      \"QuantidadeMax\": \"<integer>\",\n      \"PermitidoAlterar\": \"<boolean>\"\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/Produto/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Produto",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "/api/Produto/:id",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/Produto/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"Produto",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Success",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/Produto/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Produto",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "/api/Produto",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": "{{baseUrl}}/api/Produto"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": "{{baseUrl}}/api/Produto"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/api/Produto",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"Nome\": \"<string>\",\n  \"Categoria\": \"<string>\",\n  \"Preco\": \"<double>\",\n  \"Descricao\": \"<string>\",\n  \"Foto\": \"<string>\",\n  \"ProdutoItens\": [\n    {\n      \"Item\": {\n        \"Id\": \"<integer>\",\n        \"TipoItem\": \"<string>\",\n        \"Valor\": \"<double>\",\n        \"QuantidadeItem\": \"<integer>\"\n      },\n      \"Quantidade\": \"<integer>\",\n      \"QuantidadeMin\": \"<integer>\",\n      \"QuantidadeMax\": \"<integer>\",\n      \"PermitidoAlterar\": \"<boolean>\"\n    },\n    {\n      \"Item\": {\n        \"Id\": \"<integer>\",\n        \"TipoItem\": \"<string>\",\n        \"Valor\": \"<double>\",\n        \"QuantidadeItem\": \"<integer>\"\n      },\n      \"Quantidade\": \"<integer>\",\n      \"QuantidadeMin\": \"<integer>\",\n      \"QuantidadeMax\": \"<integer>\",\n      \"PermitidoAlterar\": \"<boolean>\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{baseUrl}}/api/Produto"
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"Nome\": \"<string>\",\n  \"Categoria\": \"<string>\",\n  \"Preco\": \"<double>\",\n  \"Descricao\": \"<string>\",\n  \"Foto\": \"<string>\",\n  \"ProdutoItens\": [\n    {\n      \"Item\": {\n        \"Id\": \"<integer>\",\n        \"TipoItem\": \"<string>\",\n        \"Valor\": \"<double>\",\n        \"QuantidadeItem\": \"<integer>\"\n      },\n      \"Quantidade\": \"<integer>\",\n      \"QuantidadeMin\": \"<integer>\",\n      \"QuantidadeMax\": \"<integer>\",\n      \"PermitidoAlterar\": \"<boolean>\"\n    },\n    {\n      \"Item\": {\n        \"Id\": \"<integer>\",\n        \"TipoItem\": \"<string>\",\n        \"Valor\": \"<double>\",\n        \"QuantidadeItem\": \"<integer>\"\n      },\n      \"Quantidade\": \"<integer>\",\n      \"QuantidadeMin\": \"<integer>\",\n      \"QuantidadeMax\": \"<integer>\",\n      \"PermitidoAlterar\": \"<boolean>\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/Produto"
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}

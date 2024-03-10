@@ -1,0 +1,1488 @@
+{
+  "domain": {
+    "name": "[icons: default]",
+    "actors": {
+      "Person": "<svg viewBox=\"0 0 24 26\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z\"/><path d=\"M0 0h24v24H0z\" fill=\"none\"/></svg>",
+      "Group": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"48\" viewBox=\"0 0 24 26\"><path d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M16.5 13c-1.2 0-3.07.34-4.5 1-1.43-.67-3.3-1-4.5-1C5.33 13 1 14.08 1 16.25V19h22v-2.75c0-2.17-4.33-3.25-6.5-3.25zm-4 4.5h-10v-1.25c0-.54 2.56-1.75 5-1.75s5 1.21 5 1.75v1.25zm9 0H14v-1.25c0-.46-.2-.86-.52-1.22.88-.3 1.96-.53 3.02-.53 2.44 0 5 1.21 5 1.75v1.25zM7.5 12c1.93 0 3.5-1.57 3.5-3.5S9.43 5 7.5 5 4 6.57 4 8.5 5.57 12 7.5 12zm0-5.5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 5.5c1.93 0 3.5-1.57 3.5-3.5S18.43 5 16.5 5 13 6.57 13 8.5s1.57 3.5 3.5 3.5zm0-5.5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z\"/></svg>",
+      "System": "<svg viewBox=\"0 0 24 26\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M20,18c1.1,0,2-0.9,2-2V6c0-1.1-0.9-2-2-2H4C2.9,4,2,4.9,2,6v10c0,1.1,0.9,2,2,2H0v2h24v-2H20z M4,6h16v10H4V6z\"/></svg>"
+    },
+    "workObjects": {
+      "Document": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 26\"><path fill=\"none\" d=\"M0 0h24v24H0V0z\"/><path d=\"M8 16h8v2H8zm0-4h8v2H8zm6-10H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z\"/></svg>",
+      "Folder": "<svg viewBox=\"0 0 24 26\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"none\" d=\"M0,0h24v24H0V0z\"/><path d=\"M9.17,6l2,2H20v10L4,18V6H9.17 M10,4H4C2.9,4,2.01,4.9,2.01,6L2,18c0,1.1,0.9,2,2,2h16c1.1,0,2-0.9,2-2V8c0-1.1-0.9-2-2-2 h-8L10,4L10,4z\"/></svg>",
+      "Call": "<svg viewBox=\"0 0 24 26\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"none\" d=\"M0,0h24v24H0V0z\"/><path d=\"M6.54,5C6.6,5.89,6.75,6.76,6.99,7.59l-1.2,1.2C5.38,7.59,5.12,6.32,5.03,5H6.54 M16.4,17.02c0.85,0.24,1.72,0.39,2.6,0.45 v1.49c-1.32-0.09-2.59-0.35-3.8-0.75L16.4,17.02 M7.5,3H4C3.45,3,3,3.45,3,4c0,9.39,7.61,17,17,17c0.55,0,1-0.45,1-1v-3.49\tc0-0.55-0.45-1-1-1c-1.24,0-2.45-0.2-3.57-0.57c-0.1-0.04-0.21-0.05-0.31-0.05c-0.26,0-0.51,0.1-0.71,0.29l-2.2,2.2 c-2.83-1.45-5.15-3.76-6.59-6.59l2.2-2.2C9.1,8.31,9.18,7.92,9.07,7.57C8.7,6.45,8.5,5.25,8.5,4C8.5,3.45,8.05,3,7.5,3L7.5,3z\"/></svg>",
+      "Email": "<svg viewBox=\"0 0 24 26\" xmlns=\"http://www.w3.org/2000/svg\"><path fill=\"none\" d=\"M0,0h24v24H0V0z\"/><path fill-opacity=\"0.9\" d=\"M12,1.95c-5.52,0-10,4.48-10,10s4.48,10,10,10h5v-2h-5c-4.34,0-8-3.66-8-8s3.66-8,8-8s8,3.66,8,8v1.43 c0,0.79-0.71,1.57-1.5,1.57S17,14.17,17,13.38v-1.43c0-2.76-2.24-5-5-5s-5,2.24-5,5s2.24,5,5,5c1.38,0,2.64-0.56,3.54-1.47 c0.65,0.89,1.77,1.47,2.96,1.47c1.97,0,3.5-1.6,3.5-3.57v-1.43C22,6.43,17.52,1.95,12,1.95z M12,14.95c-1.66,0-3-1.34-3-3 s1.34-3,3-3s3,1.34,3,3S13.66,14.95,12,14.95z\"/></svg>",
+      "Conversation": "<svg height=\"48\" viewBox=\"0 0 24 26\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 0h24v24H0V0z\" fill=\"none\"/><path d=\"M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z\"/></svg>",
+      "Info": "<svg height=\"48\" viewBox=\"0 0 24 26\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z\"/></svg>",
+      "View-List": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 26\"><path opacity=\".87\" fill=\"none\" d=\"M0 0h24v24H0V0z\"/><path d=\"M3 5v14h17V5H3zm4 2v2H5V7h2zm-2 6v-2h2v2H5zm0 2h2v2H5v-2zm13 2H9v-2h9v2zm0-4H9v-2h9v2zm0-4H9V7h9v2z\"/></svg>",
+      "Receipt": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 28\"><path fill=\"none\" d=\"M0 0h24v24H0V0z\"/><path d=\"M19.5 3.5L18 2l-1.5 1.5L15 2l-1.5 1.5L12 2l-1.5 1.5L9 2 7.5 3.5 6 2 4.5 3.5 3 2v20l1.5-1.5L6 22l1.5-1.5L9 22l1.5-1.5L12 22l1.5-1.5L15 22l1.5-1.5L18 22l1.5-1.5L21 22V2l-1.5 1.5zM19 19.09H5V4.91h14v14.18zM6 15h12v2H6zm0-4h12v2H6zm0-4h12v2H6z\"/></svg>",
+      "Truck": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 26\"><path fill=\"none\" d=\"M0 0h24v24H0V0z\"/><path d=\"M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zm-.5 1.5l1.96 2.5H17V9.5h2.5zM6 18c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm2.22-3c-.55-.61-1.33-1-2.22-1s-1.67.39-2.22 1H3V6h12v9H8.22zM18 18c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z\"/></svg>",
+      "Dollar": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 26\"><path fill=\"none\" d=\"M0 0h24v24H0V0z\"/><path d=\"M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z\"/></svg>",
+      "Desktop": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 26\"><path fill=\"none\" d=\"M0 0h24v24H0V0z\"/><path d=\"M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z\"/></svg>"
+    }
+  },
+  "dst": [
+    {
+      "$type": "Element",
+      "name": "Pedido",
+      "id": "shape_2349",
+      "di": {},
+      "type": "domainStory:workObjectDocument",
+      "pickedColor": "black",
+      "x": 2352,
+      "y": 873
+    },
+    {
+      "$type": "Element",
+      "name": "Pedido",
+      "id": "shape_9644",
+      "di": {},
+      "type": "domainStory:workObjectDocument",
+      "pickedColor": "black",
+      "x": 2352,
+      "y": 1022
+    },
+    {
+      "$type": "Element",
+      "name": "Pedido",
+      "id": "shape_3721",
+      "di": {},
+      "type": "domainStory:workObjectDocument",
+      "pickedColor": "black",
+      "x": 2352,
+      "y": 752
+    },
+    {
+      "$type": "Element",
+      "name": "Pedido",
+      "id": "shape_0167",
+      "di": {},
+      "type": "domainStory:workObjectDocument",
+      "pickedColor": "black",
+      "x": 2352,
+      "y": 492
+    },
+    {
+      "$type": "Element",
+      "name": "Sistema",
+      "id": "shape_3690",
+      "di": {},
+      "type": "domainStory:actorSystem",
+      "pickedColor": "black",
+      "x": 2802,
+      "y": 542
+    },
+    {
+      "$type": "Element",
+      "name": "Pedido",
+      "id": "shape_0968",
+      "di": {},
+      "type": "domainStory:workObjectDocument",
+      "pickedColor": "black",
+      "x": 2352,
+      "y": 372
+    },
+    {
+      "type": "domainStory:connection",
+      "name": "",
+      "id": "connection_4310",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "waypoints": [
+        {
+          "original": {
+            "x": 552,
+            "y": 214
+          },
+          "x": 552,
+          "y": 214
+        },
+        {
+          "original": {
+            "x": 588,
+            "y": 245
+          },
+          "x": 588,
+          "y": 245
+        }
+      ],
+      "source": "shape_7083",
+      "target": "shape_2612"
+    },
+    {
+      "type": "domainStory:connection",
+      "name": "",
+      "id": "connection_1349",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "waypoints": [
+        {
+          "original": {
+            "x": 566,
+            "y": 333
+          },
+          "x": 566,
+          "y": 333
+        },
+        {
+          "original": {
+            "x": 572,
+            "y": 335
+          },
+          "x": 572,
+          "y": 335
+        }
+      ],
+      "source": "shape_9198",
+      "target": "shape_1281"
+    },
+    {
+      "type": "domainStory:connection",
+      "name": "",
+      "id": "connection_2166",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "waypoints": [
+        {
+          "original": {
+            "x": 568,
+            "y": 450
+          },
+          "x": 568,
+          "y": 450
+        },
+        {
+          "original": {
+            "x": 565,
+            "y": 449
+          },
+          "x": 565,
+          "y": 449
+        }
+      ],
+      "source": "shape_9085",
+      "target": "shape_0266"
+    },
+    {
+      "type": "domainStory:connection",
+      "name": "",
+      "id": "connection_7132",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "waypoints": [
+        {
+          "original": {
+            "x": 573,
+            "y": 576
+          },
+          "x": 573,
+          "y": 576
+        },
+        {
+          "original": {
+            "x": 565,
+            "y": 575
+          },
+          "x": 565,
+          "y": 575
+        }
+      ],
+      "source": "shape_3181",
+      "target": "shape_9502"
+    },
+    {
+      "type": "domainStory:connection",
+      "name": "",
+      "id": "connection_3652",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "waypoints": [
+        {
+          "original": {
+            "x": 520,
+            "y": 748
+          },
+          "x": 520,
+          "y": 748
+        },
+        {
+          "original": {
+            "x": 517,
+            "y": 768
+          },
+          "x": 517,
+          "y": 768
+        }
+      ],
+      "source": "shape_9265",
+      "target": "shape_7324"
+    },
+    {
+      "type": "domainStory:workObjectDollar",
+      "name": "Pagamento",
+      "id": "shape_3713",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "x": 488,
+      "y": 852
+    },
+    {
+      "type": "domainStory:workObjectView-List",
+      "name": "Tela de acompanhamentos",
+      "id": "shape_3181",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "x": 488,
+      "y": 533
+    },
+    {
+      "type": "domainStory:workObjectView-List",
+      "name": "Tela de sobremesas",
+      "id": "shape_9085",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "x": 488,
+      "y": 403
+    },
+    {
+      "type": "domainStory:workObjectView-List",
+      "name": "Tela de bebidas",
+      "id": "shape_9198",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "x": 490,
+      "y": 282
+    },
+    {
+      "type": "domainStory:workObjectView-List",
+      "name": "Tela de lanches",
+      "id": "shape_7083",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "x": 487,
+      "y": 152
+    },
+    {
+      "type": "domainStory:workObjectView-List",
+      "name": "Tela de cadastro ou usuário anônimo",
+      "id": "shape_8123",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "x": 487,
+      "y": 26
+    },
+    {
+      "type": "domainStory:workObjectReceipt",
+      "name": "Ticket de pedido",
+      "id": "shape_6204",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "x": 488,
+      "y": 972
+    },
+    {
+      "type": "domainStory:actorPerson",
+      "name": "Cliente",
+      "id": "shape_2595",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "x": -353,
+      "y": 372
+    },
+    {
+      "type": "domainStory:workObjectTruck",
+      "name": "Carrinho",
+      "id": "shape_9265",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "x": 489,
+      "y": 663
+    },
+    {
+      "type": "domainStory:actorSystem",
+      "name": "Totem da lanchonete",
+      "id": "shape_1870",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "x": 1287,
+      "y": 332
+    },
+    {
+      "type": "domainStory:textAnnotation",
+      "name": "",
+      "id": "shape_2612",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "x": 555,
+      "y": 245,
+      "text": "Opcional",
+      "number": 30,
+      "width": 99.99998764470521,
+      "height": 30
+    },
+    {
+      "type": "domainStory:textAnnotation",
+      "name": "",
+      "id": "shape_1281",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "x": 565,
+      "y": 335,
+      "text": "Opcional",
+      "number": 30,
+      "width": 100.0000082368632,
+      "height": 30
+    },
+    {
+      "type": "domainStory:textAnnotation",
+      "name": "",
+      "id": "shape_0266",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "x": 565,
+      "y": 445,
+      "text": "Opcional",
+      "number": 30,
+      "width": 100.0000082368632,
+      "height": 30
+    },
+    {
+      "type": "domainStory:textAnnotation",
+      "name": "",
+      "id": "shape_9502",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "x": 565,
+      "y": 565,
+      "text": "Opcionall",
+      "number": 30,
+      "width": 100.0000082368632,
+      "height": 30
+    },
+    {
+      "type": "domainStory:textAnnotation",
+      "name": "",
+      "id": "shape_7324",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "x": 465,
+      "y": 768,
+      "text": "Deve conter ao menos um item",
+      "number": 43.18488529014845,
+      "width": 100.0000082368632,
+      "height": 43.18488529014845
+    },
+    {
+      "type": "domainStory:actorPerson",
+      "name": "Cozinheiro",
+      "id": "shape_5878",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "x": 1752,
+      "y": 332
+    },
+    {
+      "type": "domainStory:workObjectDocument",
+      "name": "Pedido",
+      "id": "shape_1612",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "x": 2352,
+      "y": 142
+    },
+    {
+      "type": "domainStory:workObjectDocument",
+      "name": "Pedido",
+      "id": "shape_4279",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "x": 2352,
+      "y": 252
+    },
+    {
+      "type": "domainStory:workObjectDocument",
+      "name": "Pedido",
+      "id": "shape_0353",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "x": 2352,
+      "y": 612
+    },
+    {
+      "type": "domainStory:actorPerson",
+      "name": "Atendente",
+      "id": "shape_4999",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "x": 1752,
+      "y": 772
+    },
+    {
+      "type": "domainStory:actorPerson",
+      "name": "Cliente",
+      "id": "shape_1723",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "x": 1752,
+      "y": 1022
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "Acessa",
+      "id": "connection_9287",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": 1,
+      "waypoints": [
+        {
+          "original": {
+            "x": -285,
+            "y": 397
+          },
+          "x": -285,
+          "y": 397
+        },
+        {
+          "original": {
+            "x": 487,
+            "y": 74
+          },
+          "x": 487,
+          "y": 74
+        }
+      ],
+      "source": "shape_2595",
+      "target": "shape_8123",
+      "multipleNumberAllowed": null
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "do",
+      "id": "connection_7842",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": null,
+      "waypoints": [
+        {
+          "original": {
+            "x": 563,
+            "y": 77
+          },
+          "x": 563,
+          "y": 77
+        },
+        {
+          "original": {
+            "x": 1287,
+            "y": 334
+          },
+          "x": 1287,
+          "y": 334
+        }
+      ],
+      "source": "shape_8123",
+      "target": "shape_1870",
+      "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "Cria pedido na",
+      "id": "connection_7491",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": 2,
+      "waypoints": [
+        {
+          "original": {
+            "x": -281,
+            "y": 401
+          },
+          "x": -281,
+          "y": 401
+        },
+        {
+          "original": {
+            "x": 487,
+            "y": 201
+          },
+          "x": 487,
+          "y": 201
+        }
+      ],
+      "source": "shape_2595",
+      "target": "shape_7083",
+      "multipleNumberAllowed": null
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "complementa pedido",
+      "id": "connection_7379",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": 3,
+      "waypoints": [
+        {
+          "original": {
+            "x": -277,
+            "y": 406
+          },
+          "x": -277,
+          "y": 406
+        },
+        {
+          "original": {
+            "x": 490,
+            "y": 323
+          },
+          "x": 490,
+          "y": 323
+        }
+      ],
+      "source": "shape_2595",
+      "target": "shape_9198",
+      "multipleNumberAllowed": null
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "complementa pedido\n",
+      "id": "connection_3094",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": 4,
+      "waypoints": [
+        {
+          "original": {
+            "x": -271,
+            "y": 412
+          },
+          "x": -271,
+          "y": 412
+        },
+        {
+          "original": {
+            "x": 488,
+            "y": 439
+          },
+          "x": 488,
+          "y": 439
+        }
+      ],
+      "source": "shape_2595",
+      "target": "shape_9085",
+      "multipleNumberAllowed": null
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "complementa pedido",
+      "id": "connection_9126",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": 5,
+      "waypoints": [
+        {
+          "original": {
+            "x": -272,
+            "y": 419
+          },
+          "x": -272,
+          "y": 419
+        },
+        {
+          "original": {
+            "x": 488,
+            "y": 576
+          },
+          "x": 488,
+          "y": 576
+        }
+      ],
+      "source": "shape_2595",
+      "target": "shape_3181",
+      "multipleNumberAllowed": null
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "do",
+      "id": "connection_6230",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": null,
+      "waypoints": [
+        {
+          "original": {
+            "x": 568,
+            "y": 199
+          },
+          "x": 568,
+          "y": 199
+        },
+        {
+          "original": {
+            "x": 1285,
+            "y": 350
+          },
+          "x": 1285,
+          "y": 350
+        }
+      ],
+      "source": "shape_7083",
+      "target": "shape_1870",
+      "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "do",
+      "id": "connection_1973",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": null,
+      "waypoints": [
+        {
+          "original": {
+            "x": 572,
+            "y": 322
+          },
+          "x": 572,
+          "y": 322
+        },
+        {
+          "original": {
+            "x": 1285,
+            "y": 350
+          },
+          "x": 1285,
+          "y": 350
+        }
+      ],
+      "source": "shape_9198",
+      "target": "shape_1870",
+      "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "do",
+      "id": "connection_4388",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": null,
+      "waypoints": [
+        {
+          "original": {
+            "x": 564,
+            "y": 436
+          },
+          "x": 564,
+          "y": 436
+        },
+        {
+          "original": {
+            "x": 1285,
+            "y": 350
+          },
+          "x": 1285,
+          "y": 350
+        }
+      ],
+      "source": "shape_9085",
+      "target": "shape_1870",
+      "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "do",
+      "id": "connection_8627",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": null,
+      "waypoints": [
+        {
+          "original": {
+            "x": 560,
+            "y": 562
+          },
+          "x": 560,
+          "y": 562
+        },
+        {
+          "original": {
+            "x": 1285,
+            "y": 370
+          },
+          "x": 1285,
+          "y": 370
+        }
+      ],
+      "source": "shape_3181",
+      "target": "shape_1870",
+      "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "Adiciona no",
+      "id": "connection_4821",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": 6,
+      "waypoints": [
+        {
+          "original": {
+            "x": -277,
+            "y": 423
+          },
+          "x": -277,
+          "y": 423
+        },
+        {
+          "original": {
+            "x": 489,
+            "y": 694
+          },
+          "x": 489,
+          "y": 694
+        }
+      ],
+      "source": "shape_2595",
+      "target": "shape_9265",
+      "multipleNumberAllowed": null
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "do",
+      "id": "connection_5273",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": null,
+      "waypoints": [
+        {
+          "original": {
+            "x": 557,
+            "y": 688
+          },
+          "x": 557,
+          "y": 688
+        },
+        {
+          "original": {
+            "x": 1285,
+            "y": 370
+          },
+          "x": 1285,
+          "y": 370
+        }
+      ],
+      "source": "shape_9265",
+      "target": "shape_1870",
+      "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "Solicita",
+      "id": "connection_8432",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": 7,
+      "waypoints": [
+        {
+          "original": {
+            "x": 1287,
+            "y": 382
+          },
+          "x": 1287,
+          "y": 382
+        },
+        {
+          "original": {
+            "x": 563,
+            "y": 885
+          },
+          "x": 563,
+          "y": 885
+        }
+      ],
+      "source": "shape_1870",
+      "target": "shape_3713",
+      "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "",
+      "id": "connection_2982",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": null,
+      "waypoints": [
+        {
+          "original": {
+            "x": 488,
+            "y": 863
+          },
+          "x": 488,
+          "y": 863
+        },
+        {
+          "x": 175,
+          "y": 640
+        },
+        {
+          "original": {
+            "x": -286,
+            "y": 432
+          },
+          "x": -286,
+          "y": 432
+        }
+      ],
+      "source": "shape_3713",
+      "target": "shape_2595"
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "Efetua",
+      "id": "connection_9855",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": 8,
+      "waypoints": [
+        {
+          "original": {
+            "x": -283,
+            "y": 429
+          },
+          "x": -283,
+          "y": 429
+        },
+        {
+          "original": {
+            "x": 488,
+            "y": 892
+          },
+          "x": 488,
+          "y": 892
+        }
+      ],
+      "source": "shape_2595",
+      "target": "shape_3713",
+      "multipleNumberAllowed": null
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "no",
+      "id": "connection_1745",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": null,
+      "waypoints": [
+        {
+          "original": {
+            "x": 549,
+            "y": 871
+          },
+          "x": 549,
+          "y": 871
+        },
+        {
+          "x": 845,
+          "y": 620
+        },
+        {
+          "x": 1175,
+          "y": 430
+        },
+        {
+          "original": {
+            "x": 1287,
+            "y": 383
+          },
+          "x": 1287,
+          "y": 383
+        }
+      ],
+      "source": "shape_3713",
+      "target": "shape_1870",
+      "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "Gera",
+      "id": "connection_5219",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": 9,
+      "waypoints": [
+        {
+          "original": {
+            "x": 1287,
+            "y": 402
+          },
+          "x": 1287,
+          "y": 402
+        },
+        {
+          "original": {
+            "x": 562,
+            "y": 1004
+          },
+          "x": 562,
+          "y": 1004
+        }
+      ],
+      "source": "shape_1870",
+      "target": "shape_6204",
+      "multipleNumberAllowed": null
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "para",
+      "id": "connection_0991",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": null,
+      "waypoints": [
+        {
+          "original": {
+            "x": 488,
+            "y": 983
+          },
+          "x": 488,
+          "y": 983
+        },
+        {
+          "original": {
+            "x": -291,
+            "y": 437
+          },
+          "x": -291,
+          "y": 437
+        }
+      ],
+      "source": "shape_6204",
+      "target": "shape_2595",
+      "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "Obtém\n",
+      "id": "connection_7574",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": 10,
+      "waypoints": [
+        {
+          "original": {
+            "x": 1830,
+            "y": 330
+          },
+          "x": 1830,
+          "y": 330
+        },
+        {
+          "original": {
+            "x": 2352,
+            "y": 179
+          },
+          "x": 2352,
+          "y": 179
+        }
+      ],
+      "source": "shape_5878",
+      "target": "shape_1612",
+      "multipleNumberAllowed": null
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "Prepara",
+      "id": "connection_8413",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": 12,
+      "waypoints": [
+        {
+          "original": {
+            "x": 1830,
+            "y": 350
+          },
+          "x": 1830,
+          "y": 350
+        },
+        {
+          "original": {
+            "x": 2350,
+            "y": 290
+          },
+          "x": 2350,
+          "y": 290
+        }
+      ],
+      "source": "shape_5878",
+      "target": "shape_4279",
+      "multipleNumberAllowed": null
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "Conclui",
+      "id": "connection_5829",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": 13,
+      "waypoints": [
+        {
+          "original": {
+            "x": 1830,
+            "y": 370
+          },
+          "x": 1833,
+          "y": 370
+        },
+        {
+          "original": {
+            "x": 2350,
+            "y": 410
+          },
+          "x": 2350,
+          "y": 410
+        }
+      ],
+      "source": "shape_5878",
+      "target": "shape_0968",
+      "multipleNumberAllowed": null
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "Muda status do pedido para \"Pronto\"",
+      "id": "connection_8661",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": 14,
+      "waypoints": [
+        {
+          "original": {
+            "x": 1830,
+            "y": 390
+          },
+          "x": 1830,
+          "y": 390
+        },
+        {
+          "original": {
+            "x": 2350,
+            "y": 530
+          },
+          "x": 2350,
+          "y": 530
+        }
+      ],
+      "source": "shape_5878",
+      "target": "shape_0167",
+      "multipleNumberAllowed": null
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "Embrulha pedido \"Pronto\"",
+      "id": "connection_3142",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": 15,
+      "waypoints": [
+        {
+          "original": {
+            "x": 1830,
+            "y": 790
+          },
+          "x": 1830,
+          "y": 790
+        },
+        {
+          "original": {
+            "x": 2352,
+            "y": 650
+          },
+          "x": 2352,
+          "y": 650
+        }
+      ],
+      "source": "shape_4999",
+      "target": "shape_0353",
+      "multipleNumberAllowed": null
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "Muda status do pedido para \"Aguardando retirada\"",
+      "id": "connection_0119",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": 16,
+      "waypoints": [
+        {
+          "original": {
+            "x": 1830,
+            "y": 810
+          },
+          "x": 1832,
+          "y": 810
+        },
+        {
+          "x": 2030,
+          "y": 790
+        },
+        {
+          "original": {
+            "x": 2349,
+            "y": 790
+          },
+          "x": 2349,
+          "y": 790
+        }
+      ],
+      "source": "shape_4999",
+      "target": "shape_3721",
+      "multipleNumberAllowed": null
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "no",
+      "id": "connection_8690",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": null,
+      "waypoints": [
+        {
+          "original": {
+            "x": 2390,
+            "y": 530
+          },
+          "x": 2436,
+          "y": 536
+        },
+        {
+          "original": {
+            "x": 2800,
+            "y": 580
+          },
+          "x": 2800,
+          "y": 580
+        }
+      ],
+      "source": "shape_0167",
+      "target": "shape_3690",
+      "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "no",
+      "id": "connection_9757",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": null,
+      "waypoints": [
+        {
+          "original": {
+            "x": 2390,
+            "y": 180
+          },
+          "x": 2417,
+          "y": 204
+        },
+        {
+          "original": {
+            "x": 2824,
+            "y": 562
+          },
+          "x": 2802,
+          "y": 543
+        }
+      ],
+      "source": "shape_1612",
+      "target": "shape_3690",
+      "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "Muda status do pedido para \"Em preparação\"",
+      "id": "connection_5027",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": 11,
+      "waypoints": [
+        {
+          "original": {
+            "x": 2840,
+            "y": 580
+          },
+          "x": 2818,
+          "y": 542
+        },
+        {
+          "x": 2660,
+          "y": 270
+        },
+        {
+          "original": {
+            "x": 2410,
+            "y": 197
+          },
+          "x": 2421,
+          "y": 200
+        }
+      ],
+      "source": "shape_3690",
+      "target": "shape_1612",
+      "multipleNumberAllowed": null
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "no",
+      "id": "connection_2335",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": null,
+      "waypoints": [
+        {
+          "original": {
+            "x": 2390,
+            "y": 790
+          },
+          "x": 2419,
+          "y": 777
+        },
+        {
+          "original": {
+            "x": 2822,
+            "y": 597
+          },
+          "x": 2802,
+          "y": 606
+        }
+      ],
+      "source": "shape_3721",
+      "target": "shape_3690",
+      "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "Busca pedido",
+      "id": "connection_0567",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": 17,
+      "waypoints": [
+        {
+          "original": {
+            "x": 1790,
+            "y": 1060
+          },
+          "x": 1833,
+          "y": 1060
+        },
+        {
+          "original": {
+            "x": 2348,
+            "y": 1060
+          },
+          "x": 2348,
+          "y": 1060
+        }
+      ],
+      "source": "shape_1723",
+      "target": "shape_9644",
+      "multipleNumberAllowed": null
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "Muda status do pedido para \"Finalizado\"",
+      "id": "connection_2780",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": 18,
+      "waypoints": [
+        {
+          "original": {
+            "x": 1830,
+            "y": 820
+          },
+          "x": 1831,
+          "y": 820
+        },
+        {
+          "original": {
+            "x": 2372,
+            "y": 920
+          },
+          "x": 2352,
+          "y": 916
+        }
+      ],
+      "source": "shape_4999",
+      "target": "shape_2349",
+      "multipleNumberAllowed": null
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "no",
+      "id": "connection_4780",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": null,
+      "waypoints": [
+        {
+          "original": {
+            "x": 2390,
+            "y": 911
+          },
+          "x": 2415,
+          "y": 894
+        },
+        {
+          "original": {
+            "x": 2840,
+            "y": 597
+          },
+          "x": 2802,
+          "y": 624
+        }
+      ],
+      "source": "shape_2349",
+      "target": "shape_3690",
+      "multipleNumberAllowed": false
+    },
+    {
+      "type": "domainStory:activity",
+      "name": "com",
+      "id": "connection_8119",
+      "$type": "Element",
+      "di": {},
+      "$descriptor": {},
+      "pickedColor": "black",
+      "number": null,
+      "waypoints": [
+        {
+          "original": {
+            "x": 2390,
+            "y": 1060
+          },
+          "x": 2352,
+          "y": 1045
+        },
+        {
+          "original": {
+            "x": 1807,
+            "y": 827
+          },
+          "x": 1820,
+          "y": 832
+        }
+      ],
+      "source": "shape_9644",
+      "target": "shape_4999",
+      "multipleNumberAllowed": false
+    },
+    {
+      "info": "< description >"
+    },
+    {
+      "version": "2.0.0-beta.1"
+    }
+  ]
+}
