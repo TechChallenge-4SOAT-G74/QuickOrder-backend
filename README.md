@@ -40,8 +40,7 @@ Antes de executar este projeto, os seguintes itens deverão estar instalados no 
 * Verificar e caso necessário, ajustar o arquivo appSettings.json para que os valores das connectionStrings fiquem conforme abaixo:
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/cd812ee5-f856-4368-96f2-743650a13866)
-
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/e6cbc4a3-87bf-450a-bc39-4b36182c7223)
 
 ## Instalação pelo Visual Studio 2022
 
@@ -52,7 +51,8 @@ Passo a passo:
 * Localizar o arquivo **docker-compose** no Solution Explorer:
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/a4f481ce-4f13-4980-913d-f6751aec050a)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/748435a2-1257-4b95-8cc8-7b63fef4cbc9)
+
 
 <br />
 
@@ -60,7 +60,8 @@ Passo a passo:
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/f16770a5-ed9e-47df-ad84-b8363ca79832)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/7f4ffe64-ed50-4061-b699-d148e50a2c3c)
+
 
 <br />
 
@@ -68,7 +69,8 @@ Passo a passo:
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/495ec4ef-9b0f-4037-8f0b-7390c485a616)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/b3e01c69-daa8-4e97-98b0-6a3d608f628d)
+
 
 <br />
 
@@ -76,7 +78,8 @@ Passo a passo:
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/c6b1d930-5ea2-459d-a116-a9f960c72c7e)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/8854c72c-c280-450a-9b65-2b19f57a9ec9)
+
 
 <br />
 
@@ -84,7 +87,8 @@ Passo a passo:
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/3d2881da-c561-4a48-88fa-34f53bd1e889)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/b489cf48-2bb9-445f-9817-c1caaf35648f)
+
 
 <br />
 
@@ -92,7 +96,8 @@ Passo a passo:
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/4bac9341-7130-4445-b675-88adfa3ccb53)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/671a5e6d-816c-4539-be41-bb32e40970ee)
+
 
 <br />
 
@@ -106,7 +111,8 @@ Passo a passo:
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/d1ab97a6-9c8f-407f-bc98-e0cdb08f860d)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/c0ac9833-55d6-4b44-8d0c-0c48220697b7)
+
 
 <br />
 
@@ -115,7 +121,7 @@ Passo a passo:
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/046561e8-9527-4e97-9882-1da1b04a9041)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/969a9138-7eb1-4ba6-a275-7c1f31ecd8a0)
 
 
 
@@ -129,7 +135,8 @@ Passo a passo:
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/c1150eb1-a25a-4ee2-aeb8-c0c03ede965f)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/0ef4ec5a-2b44-484f-bdf4-b7fd3f5cbd44)
+
 
 <br />
 
@@ -141,7 +148,8 @@ Passo a passo:
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/a65095b1-08a6-4538-9b0c-4a781ebf979b)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/51400a14-7ee7-4b62-a4e8-475b3ebb44fb)
+
 
 <br />
 
@@ -151,14 +159,16 @@ Passo a passo:
   
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/953c1eeb-8bca-4ee4-bc1d-1299e6068b4f)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/ce7f5145-2ae7-44a0-82d5-fecf3c593589)
+
 
 * Caso o contexto do **docker-desktop** não esteja selecionado, selecionar o mesmo através do comando `kubectl config set-context docker-desktop`
 * Executar o comando `kubectl get all` para garantir que o cluster esteja limpo e assim prevenir que ocorram conflitos de portas nos passos posteriores. O resultado deverá ser esse:
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/2a0b22e7-bb53-4f0f-a902-ad1db0071f68)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/01637947-6284-4dd3-a148-d1cc039603f4)
+
 
 <br />
 
@@ -167,7 +177,8 @@ Passo a passo:
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/4c7a6310-6c38-48d3-90d9-e9c40f2fb69c)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/d3178876-cc52-4bd7-85d0-7f14a87a8388)
+
 
 <br />
 
@@ -175,7 +186,8 @@ Passo a passo:
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/9b0f694f-3d8c-4cce-81b1-82b398cfd329)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/22804119-0160-40bc-84b0-33449cdf93a3)
+
 
 <br />
 
@@ -183,7 +195,8 @@ Passo a passo:
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/302526e7-95c5-4ca7-83bb-9d6b1ee1b5a0)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/3248875b-eb3c-4530-94ca-0f2483da4831)
+
 
 <br />
 
@@ -191,7 +204,8 @@ Passo a passo:
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/f225f071-a3d8-4d3f-a806-6e6dd678115d)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/8797c7ef-0347-4da1-8acd-57f9ee0395e1)
+
 
 <br />
 
@@ -199,7 +213,8 @@ Passo a passo:
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/82f403f5-9396-4bde-8752-d981e97810fb)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/4023a98f-6c0c-491f-9530-bdddc614df4f)
+
 
 <br />
 
@@ -207,7 +222,8 @@ Passo a passo:
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/8eda4804-7b3a-48a9-beee-1d562693b280)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/f8116e81-39f2-4659-9fe4-b814b552ab51)
+
 
 <br />
 
@@ -217,7 +233,7 @@ Passo a passo:
 
 <div align="center">
       <a href="https://www.youtube.com/watch?v=GJAberOaVkc">
-     <img src="https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/028deb6c-4929-4fbb-9fa9-294108219dd3" 
+     <img src="https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/163fddfb-86f0-4f2b-9591-81d0e6f3715d"
       alt="Kubernetes" 
       style="width:560px;height:315px;">
       </a>
@@ -230,7 +246,7 @@ Passo a passo:
 <br />
 <div align="center">
       <a href="https://www.youtube.com/watch?v=qNlFbp0ErRk">
-     <img src="https://github.com/TechChallenge-4SOAT-G36/QuickOrder/assets/19378661/2c30080d-9288-4da2-b85d-32069c274695" 
+     <img src="https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/c7619a83-9f94-4cee-886e-bb7dc3f9023e" 
       alt="Api" 
       style="width:560px;height:315px;">
       </a>
