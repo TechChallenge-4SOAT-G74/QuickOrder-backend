@@ -39,7 +39,7 @@ jobs:
         uses: docker/setup-buildx-action@v3
         
       - name: Build and push Docker
-        run: docker-compose up -d
+        run: src/docker-compose.yml up -d
 
       - name: Inspect
         run: |
