@@ -8,14 +8,13 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["Adapters/Driving/Api/QuickOrder.Adapters.Driving.Api.csproj", "Adapters/Driving/Api/"]
-COPY ["Adapters/Driven/Infra.MercadoPago/QuickOrder.Adapters.Driven.MercadoPago.csproj", "Adapters/Driven/Infra.MercadoPago/"]
 COPY ["Adapters/Driven/Infra.MongoDB/QuickOrder.Adapters.Driven.MongoDB.csproj", "Adapters/Driven/Infra.MongoDB/"]
 COPY ["Adapters/Driven/Infra.PostgresDB/QuickOrder.Adapters.Driven.PostgresDB.csproj", "Adapters/Driven/Infra.PostgresDB/"]
 COPY ["Adapters/Driven/Infra.ServiceBus/QuickOrder.Adapters.Driven.ServiceBus.csproj", "Adapters/Driven/Infra.ServiceBus/"]
+COPY ["Adapters/Driven/Infra.MercadoPago/QuickOrder.Adapters.Driven.MercadoPago.csproj", "Adapters/Driven/Infra.MercadoPago/"]
 COPY ["Core/IoC/QuickOrder.Core.IoC.csproj", "Core/IoC/"]
 COPY ["Core/Domain/QuickOrder.Core.Domain.csproj", "Core/Domain/"]
 COPY ["Core/Application/QuickOrder.Core.Application.csproj", "Core/Application/"]
-
 RUN dotnet restore "Adapters/Driving/Api/QuickOrder.Adapters.Driving.Api.csproj"
 COPY . .
 WORKDIR "/src/Adapters/Driving/Api"
