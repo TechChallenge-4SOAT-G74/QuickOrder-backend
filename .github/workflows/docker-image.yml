@@ -51,7 +51,7 @@ jobs:
           push: true
           tags: quickorder:latest
           secrets: |
-            GIT_AUTH_TOKEN=${{ secrets.DOCKERHUB_TOKEN }}
+            DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Inspect
         run: |
           docker image inspect quickorder:latest
