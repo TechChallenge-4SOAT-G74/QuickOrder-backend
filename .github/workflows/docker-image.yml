@@ -42,7 +42,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: src
+          file: src/Adapters/Driving/Api
           push: true
           tags: quickorder-backend:latest
           secrets: |
