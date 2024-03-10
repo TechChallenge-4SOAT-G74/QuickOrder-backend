@@ -42,7 +42,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: src/docker-compose/docker-compose
+          file: src/docker-compose.yml
           push: true
           tags: quickorder-backend:latest
           cache-from: type=gha
