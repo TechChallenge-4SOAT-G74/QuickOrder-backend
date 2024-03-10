@@ -6,6 +6,7 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["Adapters/Driving/Api/QuickOrder.Adapters.Driving.Api.csproj", "Adapters/Driving/Api/"]
 COPY ["Adapters/Driven/Infra.MongoDB/QuickOrder.Adapters.Driven.MongoDB.csproj", "Adapters/Driven/Infra.MongoDB/"]
@@ -21,6 +22,7 @@ WORKDIR "/src/Adapters/Driving/Api"
 RUN dotnet build "QuickOrder.Adapters.Driving.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
+ARG BUILD_CONFIGURATION=Release
 RUN dotnet publish "QuickOrder.Adapters.Driving.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
