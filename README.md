@@ -167,11 +167,13 @@ Passo a passo:
 <br />
 
 * Caso haja algum **pod, svc ou deployment** etc listado no passo anterior, limpar o cluster através do comando `kubectl delete all --all` e `kubectl delete pvc --all`
-* Navegar até a pasta **Kubernetes** do Projeto:
+* Baixe o projeto QuickOrder-Infra-Kubernetes do repositório https://github.com/TechChallenge-4SOAT-G74/QuickOrder-Infra-Kubernetes.git
+* Verifique os sprits do repositório digitando `ls` 
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/d3178876-cc52-4bd7-85d0-7f14a87a8388)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/616de0f5-6919-4cd5-b24c-02221f520511)
+
 
 
 <br />
@@ -180,7 +182,8 @@ Passo a passo:
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/22804119-0160-40bc-84b0-33449cdf93a3)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/22c32deb-51ca-4dc6-85c3-6a47ebfd2fbf)
+
 
 
 <br />
@@ -189,7 +192,7 @@ Passo a passo:
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/3248875b-eb3c-4530-94ca-0f2483da4831)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/3226bd83-292f-44cb-a76f-23055fe51380)
 
 
 <br />
@@ -198,7 +201,7 @@ Passo a passo:
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/8797c7ef-0347-4da1-8acd-57f9ee0395e1)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/cbdf8d14-72e7-4869-a591-7f68edda991e)
 
 
 <br />
@@ -207,7 +210,7 @@ Passo a passo:
 
 <br />
 
-![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/4023a98f-6c0c-491f-9530-bdddc614df4f)
+![image](https://github.com/TechChallenge-4SOAT-G74/QuickOrder-backend/assets/44347862/eae9f6e1-5d0d-4104-bc7e-c712ed09835d)
 
 
 <br />
