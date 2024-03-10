@@ -29,9 +29,10 @@ jobs:
       - name: Build
         uses: docker/build-push-action@v5
         with:
-          context: .
-          load: true
+          push: true
           tags: quickorder:latest
+          secrets: |
+            GIT_AUTH_TOKEN=${{ secrets.MYTOKEN }}
       - name: Inspect
         run: |
-          docker image inspect myimage:latest 
+          docker image inspect quickorder:latest 
