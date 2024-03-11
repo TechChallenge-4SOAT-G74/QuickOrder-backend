@@ -1,10 +1,10 @@
-﻿using QuickOrder.Core.Domain.Adapters;
+﻿using QuickOrder.Core.Domain.Adapters.Base;
 using QuickOrder.Core.Domain.Entities;
 using System.Linq.Expressions;
 
 namespace QuickOrder.Core.Domain.Repositories
 {
-    public interface IClienteRepository : IBaseRepository, IRepository<Cliente>
+    public interface IClienteGateway : IBaseRepository, IRepository<Cliente>
     {
         Task<List<Cliente>> GetAllClienteComUsuario(Expression<Func<Cliente, bool>> predicate);
         Task<Cliente> GetClienteById(int id);

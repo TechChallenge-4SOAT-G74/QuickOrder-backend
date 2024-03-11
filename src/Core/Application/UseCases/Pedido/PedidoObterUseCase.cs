@@ -1,4 +1,5 @@
 ﻿using QuickOrder.Core.Application.Dtos;
+using QuickOrder.Core.Application.Dtos.Base;
 using QuickOrder.Core.Application.UseCases.Pedido.Interfaces;
 using QuickOrder.Core.Domain.Adapters;
 using QuickOrder.Core.Domain.Entities;
@@ -10,15 +11,15 @@ namespace QuickOrder.Core.Application.UseCases.Pedido
 {
     public class PedidoObterUseCase : IPedidoObterUseCase
     {
-        private readonly IPedidoRepository _pedidoRepository;
-        private readonly IPedidoStatusRepository _pedidoStatusRepository;
-        private readonly IPagamentoStatusRepository _pagamentoStatusRepository;
+        private readonly IPedidoGateway _pedidoGateway;
+        private readonly IPedidoStatusGateway _pedidoStatusGateway;
+        private readonly IPagamentoStatusGateway _pagamentoStatusGateway;
 
-        public PedidoObterUseCase(IPedidoRepository pedidoRepository, IPedidoStatusRepository pedidoStatusRepository, IPagamentoStatusRepository pagamentoStatusRepository)
+        public PedidoObterUseCase(IPedidoGateway pedidoGateway, IPedidoStatusGateway pedidoStatusGateway, IPagamentoStatusGateway pagamentoStatusGateway)
         {
-            _pedidoRepository = pedidoRepository;
-            _pedidoStatusRepository = pedidoStatusRepository;
-            _pagamentoStatusRepository = pagamentoStatusRepository;
+            _pedidoGateway = pedidoGateway;
+            _pedidoStatusGateway = pedidoStatusGateway;
+            _pagamentoStatusGateway = pagamentoStatusGateway;
         }
 
         public async Task<ServiceResult<List<PedidoStatus>>> ConsultarFilaPedidos()
@@ -26,7 +27,7 @@ namespace QuickOrder.Core.Application.UseCases.Pedido
             var result = new ServiceResult<List<PedidoStatus>>();
             try
             {
-                var fila = await _pedidoStatusRepository.GetAll();
+                var fila = await _pedidoStatusGateway.GetAll();
                 fila = fila.Where(x => !x.StatusPedido.Equals(EStatusPedidoExtensions.ToDescriptionString(EStatusPedido.Pago))
                        && !x.StatusPedido.Equals(EStatusPedidoExtensions.ToDescriptionString(EStatusPedido.PendentePagamento))
                        && !x.StatusPedido.Equals(EStatusPedidoExtensions.ToDescriptionString(EStatusPedido.Finalizado))
@@ -47,10 +48,10 @@ namespace QuickOrder.Core.Application.UseCases.Pedido
             var result = new ServiceResult<PedidoDto>();
             try
             {
-                var pedido = await _pedidoRepository.GetFirst(id);
+                var pedido = await _pedidoGateway.GetFirst(id);
 
 
-                var fila = await _pedidoStatusRepository.GetValue("NumeroPedido", id.ToString());
+                var fila = await _pedidoStatusGateway.GetValue("NumeroPedido", id.ToString());
 
 
                 if (pedido == null || fila == null)
@@ -87,9 +88,9 @@ namespace QuickOrder.Core.Application.UseCases.Pedido
             var result = new ServiceResult<List<PedidoDto>>();
             try
             {
-                var pedido = _pedidoRepository.ObterListaPedidos().Result;
+                var pedido = _pedidoGateway.ObterListaPedidos().Result;
 
-                var fila = await _pedidoStatusRepository.GetAll();
+                var fila = await _pedidoStatusGateway.GetAll();
 
                 fila = fila.Where(x => !x.StatusPedido.Equals(EStatusPedidoExtensions.ToDescriptionString(EStatusPedido.Pago))
                        && !x.StatusPedido.Equals(EStatusPedidoExtensions.ToDescriptionString(EStatusPedido.PendentePagamento))
@@ -158,7 +159,7 @@ namespace QuickOrder.Core.Application.UseCases.Pedido
             var result = new ServiceResult<PagamentoDto>();
             try
             {
-                var pagamento = await _pagamentoStatusRepository.GetValue("NumeroPedido", id.ToString());
+                var pagamento = await _pagamentoStatusGateway.GetValue("NumeroPedido", id.ToString());
 
                 if (pagamento == null)
                 {

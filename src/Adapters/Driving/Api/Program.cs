@@ -3,7 +3,7 @@ using Microsoft.OpenApi.Models;
 using MongoDB.Driver;
 using QuickOrder.Adapters.Driven.PostgresDB.Core;
 using QuickOrder.Adapters.Driving.Api.Configurations;
-using QuickOrder.Core.Domain.Entities;
+using QuickOrder.Core.Domain.Entities.Base;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -78,7 +78,7 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<ApplicationContext>();
-    db.Database.Migrate();
+    //db.Database.Migrate();
 }
 
 // Configure the HTTP request pipeline.

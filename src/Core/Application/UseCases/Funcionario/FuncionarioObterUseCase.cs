@@ -1,4 +1,5 @@
 ﻿using QuickOrder.Core.Application.Dtos;
+using QuickOrder.Core.Application.Dtos.Base;
 using QuickOrder.Core.Application.UseCases.Funcionario.Interfaces;
 using QuickOrder.Core.Domain.Enums;
 using QuickOrder.Core.Domain.Repositories;
@@ -7,11 +8,11 @@ namespace QuickOrder.Core.Application.UseCases.Funcionario
 {
     public class FuncionarioObterUseCase : IFuncionarioObterUseCase
     {
-        private readonly IFuncionarioRepository _funcionarioRepository;
+        private readonly IFuncionarioGateway _funcionarioGateway;
 
-        public FuncionarioObterUseCase(IFuncionarioRepository funcionarioRepository)
+        public FuncionarioObterUseCase(IFuncionarioGateway funcionarioGateway)
         {
-            _funcionarioRepository = funcionarioRepository;
+            _funcionarioGateway = funcionarioGateway;
         }
 
         public async Task<ServiceResult<List<FuncionarioDto>>> Execute()
@@ -19,7 +20,7 @@ namespace QuickOrder.Core.Application.UseCases.Funcionario
             ServiceResult<List<FuncionarioDto>> result = new();
             try
             {
-                var funcionarios = await _funcionarioRepository.GetAll(x => x.Usuario.Status);
+                var funcionarios = await _funcionarioGateway.GetAll(x => x.Usuario.Status);
 
                 var list = new List<FuncionarioDto>();
 
@@ -47,7 +48,7 @@ namespace QuickOrder.Core.Application.UseCases.Funcionario
             ServiceResult<FuncionarioDto> result = new();
             try
             {
-                var funcionario = await _funcionarioRepository.GetFirst(x => x.Usuario.Status && x.Id.Equals(id));
+                var funcionario = await _funcionarioGateway.GetFirst(x => x.Usuario.Status && x.Id.Equals(id));
                 result.Data = new FuncionarioDto
                 {
                     Matricula = funcionario.Matricula,

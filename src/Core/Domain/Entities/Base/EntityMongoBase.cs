@@ -1,13 +1,13 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace QuickOrder.Core.Domain.Entities
+namespace QuickOrder.Core.Domain.Entities.Base
 {
     public class EntityMongoBase
     {
         public EntityMongoBase()
         {
-            this.Id = ObjectId.GenerateNewId();
+            Id = ObjectId.GenerateNewId();
         }
 
         [BsonId]

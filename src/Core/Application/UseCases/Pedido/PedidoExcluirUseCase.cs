@@ -1,4 +1,4 @@
-﻿using QuickOrder.Core.Application.Dtos;
+﻿using QuickOrder.Core.Application.Dtos.Base;
 using QuickOrder.Core.Application.UseCases.Pedido.Interfaces;
 using QuickOrder.Core.Domain.Adapters;
 using QuickOrder.Core.Domain.Repositories;
@@ -7,15 +7,15 @@ namespace QuickOrder.Core.Application.UseCases.Pedido
 {
     public class PedidoExcluirUseCase : IPedidoExcluirUseCase
     {
-        private readonly IPedidoRepository _pedidoRepository;
-        private readonly ICarrinhoRepository _carrinhoRepository;
-        private readonly IPedidoStatusRepository _pedidoStatusRepository;
+        private readonly IPedidoGateway _pedidoGateway;
+        private readonly ICarrinhoGateway _carrinhoGateway;
+        private readonly IPedidoStatusGateway _pedidoStatusGateway;
 
-        public PedidoExcluirUseCase(IPedidoRepository pedidoRepository, ICarrinhoRepository carrinhoRepository, IPedidoStatusRepository pedidoStatusRepository)
+        public PedidoExcluirUseCase(IPedidoGateway pedidoGateway, ICarrinhoGateway carrinhoGateway, IPedidoStatusGateway pedidoStatusGateway)
         {
-            _pedidoRepository = pedidoRepository;
-            _carrinhoRepository = carrinhoRepository;
-            _pedidoStatusRepository = pedidoStatusRepository;
+            _pedidoGateway = pedidoGateway;
+            _carrinhoGateway = carrinhoGateway;
+            _pedidoStatusGateway = pedidoStatusGateway;
         }
 
         public async Task<ServiceResult> CancelarPedido(string carrinhoId)
@@ -23,24 +23,24 @@ namespace QuickOrder.Core.Application.UseCases.Pedido
             var result = new ServiceResult();
             try
             {
-                var pedido = await _pedidoRepository.GetFirst(x => x.CarrinhoId.Equals(carrinhoId));
+                var pedido = await _pedidoGateway.GetFirst(x => x.CarrinhoId.Equals(carrinhoId));
 
                 if (pedido == null)
                 {
                     result.AddError("Pedido não encontrado.");
                     return result;
                 }
-                await _pedidoRepository.Delete(pedido.Id);
+                await _pedidoGateway.Delete(pedido.Id);
 
                 if (pedido.CarrinhoId != null)
                 {
-                    var carrinho = await _carrinhoRepository.Get(pedido.CarrinhoId);
+                    var carrinho = await _carrinhoGateway.Get(pedido.CarrinhoId);
                     if (carrinho != null)
-                        _carrinhoRepository.Delete(carrinho.Id.ToString());
+                        _carrinhoGateway.Delete(carrinho.Id.ToString());
 
-                    var status = await _pedidoStatusRepository.GetValue("CarrinhoId", pedido.CarrinhoId);
+                    var status = await _pedidoStatusGateway.GetValue("CarrinhoId", pedido.CarrinhoId);
                     if (status != null)
-                        _pedidoStatusRepository.Delete(status.Id.ToString());
+                        _pedidoStatusGateway.Delete(status.Id.ToString());
                 }
             }
             catch (Exception ex)

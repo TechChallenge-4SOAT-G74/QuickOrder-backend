@@ -1,5 +1,6 @@
 ﻿using QuickOrder.Adapters.Driven.MercadoPago.Responses;
 using QuickOrder.Core.Application.Dtos;
+using QuickOrder.Core.Application.Dtos.Base;
 using QuickOrder.Core.Application.UseCases.Pagamento.Interfaces;
 using QuickOrder.Core.Application.UseCases.Pedido.Interfaces;
 using QuickOrder.Core.Domain.Adapters;
@@ -12,16 +13,16 @@ namespace QuickOrder.Core.Application.UseCases.Pedido
 {
     public class PedidoAtualizarUseCase : IPedidoAtualizarUseCase
     {
-        private readonly IPedidoRepository _pedidoRepository;
-        private readonly ICarrinhoRepository _carrinhoRepository;
-        private readonly IPedidoStatusRepository _pedidoStatusRepository;
+        private readonly IPedidoGateway _pedidoGateway;
+        private readonly ICarrinhoGateway _carrinhoGateway;
+        private readonly IPedidoStatusGateway _pedidoStatusGateway;
         public readonly IPagamentoUseCase _pagamentoUseCase;
 
-        public PedidoAtualizarUseCase(IPedidoRepository pedidoRepository, ICarrinhoRepository carrinhoRepository, IPedidoStatusRepository pedidoStatusRepository, IPagamentoUseCase pagamentoUseCase)
+        public PedidoAtualizarUseCase(IPedidoGateway pedidoGateway, ICarrinhoGateway carrinhoGateway, IPedidoStatusGateway pedidoStatusGateway, IPagamentoUseCase pagamentoUseCase)
         {
-            _pedidoRepository = pedidoRepository;
-            _carrinhoRepository = carrinhoRepository;
-            _pedidoStatusRepository = pedidoStatusRepository;
+            _pedidoGateway = pedidoGateway;
+            _carrinhoGateway = carrinhoGateway;
+            _pedidoStatusGateway = pedidoStatusGateway;
             _pagamentoUseCase = pagamentoUseCase;
         }
 
@@ -30,7 +31,7 @@ namespace QuickOrder.Core.Application.UseCases.Pedido
             var result = new ServiceResult();
             try
             {
-                var carrinho = await _carrinhoRepository.GetValue("NumeroPedido", id);
+                var carrinho = await _carrinhoGateway.GetValue("NumeroPedido", id);
 
                 if (carrinho == null)
                 {
@@ -42,7 +43,7 @@ namespace QuickOrder.Core.Application.UseCases.Pedido
                 carrinho.Valor = produtoCarrinho.Sum(x => x.ValorProduto);
                 carrinho.ProdutosCarrinho = produtoCarrinho;
 
-                _carrinhoRepository.Update(carrinho);
+                _carrinhoGateway.Update(carrinho);
             }
             catch (Exception ex)
             {
@@ -56,7 +57,7 @@ namespace QuickOrder.Core.Application.UseCases.Pedido
             var result = new ServiceResult();
             try
             {
-                var pedido = await _pedidoStatusRepository.GetValue("NumeroPedido", id.ToString());
+                var pedido = await _pedidoStatusGateway.GetValue("NumeroPedido", id.ToString());
 
                 if (pedido == null)
                 {
@@ -66,7 +67,7 @@ namespace QuickOrder.Core.Application.UseCases.Pedido
 
                 pedido.StatusPedido = pedidoStatus;
                 pedido.DataAtualizacao = DateTime.Now;
-                _pedidoStatusRepository.Update(pedido);
+                _pedidoStatusGateway.Update(pedido);
 
             }
             catch (Exception ex)
@@ -81,7 +82,7 @@ namespace QuickOrder.Core.Application.UseCases.Pedido
             var result = new ServiceResult();
             try
             {
-                var pedido = await _pedidoRepository.GetFirst(id);
+                var pedido = await _pedidoGateway.GetFirst(id);
 
                 if (pedido == null)
                 {
@@ -91,7 +92,7 @@ namespace QuickOrder.Core.Application.UseCases.Pedido
 
                 pedido.PedidoPago = true;
 
-                await _pedidoRepository.Update(pedido);
+                await _pedidoGateway.Update(pedido);
 
                 var sacolaDto = new SacolaDto { NumeroCliente = pedido.ClienteId.ToString(), NumeroPedido = pedido.NumeroPedido.ToString(), CarrinhoId = pedido.CarrinhoId, Valor = pedido.ValorPedido };
                 await _pagamentoUseCase.AtualizarStatusPagamento(pedido.NumeroPedido.ToString(), (int)EStatusPagamento.Aprovado);
@@ -109,8 +110,8 @@ namespace QuickOrder.Core.Application.UseCases.Pedido
             var result = new ServiceResult<PaymentQrCodeResponse>();
             try
             {
-                var pedido = await _pedidoRepository.GetFirst(id);
-                var carrinho = await _carrinhoRepository.GetValue("NumeroPedido", id.ToString());
+                var pedido = await _pedidoGateway.GetFirst(id);
+                var carrinho = await _carrinhoGateway.GetValue("NumeroPedido", id.ToString());
 
                 if (pedido == null || carrinho == null)
                 {
@@ -126,9 +127,9 @@ namespace QuickOrder.Core.Application.UseCases.Pedido
                 pedido.ProdutosItemsPedido = produtosItems;
                 pedido.ValorPedido = carrinho.ProdutosCarrinho.Sum(x => x.ValorProduto);
 
-                await _pedidoRepository.Update(pedido);
+                await _pedidoGateway.Update(pedido);
 
-                var pedidoStatusExiste = await _pedidoStatusRepository.GetValue("NumeroPedido", id.ToString());
+                var pedidoStatusExiste = await _pedidoStatusGateway.GetValue("NumeroPedido", id.ToString());
 
                 if (pedidoStatusExiste == null)
                 {
@@ -137,12 +138,12 @@ namespace QuickOrder.Core.Application.UseCases.Pedido
                         EStatusPedidoExtensions.ToDescriptionString(EStatusPedido.PendentePagamento),
                         DateTime.Now);
 
-                    await _pedidoStatusRepository.Create(pedidoStatus);
+                    await _pedidoStatusGateway.Create(pedidoStatus);
                 }
                 else
                 {
                     pedidoStatusExiste.StatusPedido = EStatusPedidoExtensions.ToDescriptionString(EStatusPedido.PendentePagamento);
-                    _pedidoStatusRepository.Update(pedidoStatusExiste);
+                    _pedidoStatusGateway.Update(pedidoStatusExiste);
                 }
 
                 result = await _pagamentoUseCase.GerarQrCodePagamento(pedido.NumeroPedido);

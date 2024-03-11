@@ -1,4 +1,5 @@
 ﻿using QuickOrder.Core.Application.Dtos;
+using QuickOrder.Core.Application.Dtos.Base;
 using QuickOrder.Core.Application.UseCases.Cliente.Interfaces;
 using QuickOrder.Core.Domain.Repositories;
 using System.Runtime.InteropServices;
@@ -7,11 +8,11 @@ namespace QuickOrder.Core.Application.UseCases.Cliente
 {
     public class ClienteObterUseCase : IClienteObterUseCase
     {
-        private readonly IClienteRepository _clienteRepository;
+        private readonly IClienteGateway _clienteGateway;
 
-        public ClienteObterUseCase(IClienteRepository clienteRepository)
+        public ClienteObterUseCase(IClienteGateway clienteGateway)
         {
-            _clienteRepository = clienteRepository;
+            _clienteGateway = clienteGateway;
         }
 
         public async Task<ServiceResult<List<ClienteDto>>> Execute()
@@ -19,7 +20,7 @@ namespace QuickOrder.Core.Application.UseCases.Cliente
             ServiceResult<List<ClienteDto>> result = new();
             try
             {
-                var clientes = await _clienteRepository.GetAllClienteComUsuario(x => x.Usuario.Status);
+                var clientes = await _clienteGateway.GetAllClienteComUsuario(x => x.Usuario.Status);
 
                 var list = new List<ClienteDto>();
 
@@ -48,7 +49,7 @@ namespace QuickOrder.Core.Application.UseCases.Cliente
             ServiceResult<ClienteDto> result = new();
             try
             {
-                var cliente = await _clienteRepository.GetClienteById(id);
+                var cliente = await _clienteGateway.GetClienteById(id);
                 result.Data = new ClienteDto
                 {
                     Nome = cliente.Usuario.Nome.Nome,

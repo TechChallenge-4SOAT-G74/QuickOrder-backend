@@ -1,4 +1,4 @@
-﻿using QuickOrder.Core.Application.Dtos;
+﻿using QuickOrder.Core.Application.Dtos.Base;
 using QuickOrder.Core.Application.UseCases.Funcionario.Interfaces;
 using QuickOrder.Core.Domain.Repositories;
 
@@ -6,11 +6,11 @@ namespace QuickOrder.Core.Application.UseCases.Funcionario
 {
     public class FuncionarioExcluirUseCase : IFuncionarioExcluirUseCase
     {
-        private readonly IFuncionarioRepository _funcionarioRepository;
+        private readonly IFuncionarioGateway _funcionarioGateway;
 
-        public FuncionarioExcluirUseCase(IFuncionarioRepository funcionarioRepository)
+        public FuncionarioExcluirUseCase(IFuncionarioGateway funcionarioGateway)
         {
-            _funcionarioRepository = funcionarioRepository;
+            _funcionarioGateway = funcionarioGateway;
         }
 
         public async Task<ServiceResult> Execute(int id)
@@ -18,14 +18,14 @@ namespace QuickOrder.Core.Application.UseCases.Funcionario
             ServiceResult result = new();
             try
             {
-                var UsuarioExiste = await _funcionarioRepository.GetFirst(id);
+                var UsuarioExiste = await _funcionarioGateway.GetFirst(id);
 
                 if (UsuarioExiste == null)
                 {
                     result.AddError("Usuario não encontrado.");
                     return result;
                 }
-                await _funcionarioRepository.Delete(id);
+                await _funcionarioGateway.Delete(id);
             }
             catch (Exception ex) { result.AddError(ex.Message); }
             return result;

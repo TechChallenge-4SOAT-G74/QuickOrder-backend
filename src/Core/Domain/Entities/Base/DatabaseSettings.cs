@@ -1,4 +1,4 @@
-﻿namespace QuickOrder.Core.Domain.Entities
+﻿namespace QuickOrder.Core.Domain.Entities.Base
 {
     public class DatabaseSettings
     {

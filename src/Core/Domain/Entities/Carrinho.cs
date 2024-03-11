@@ -1,4 +1,6 @@
-﻿namespace QuickOrder.Core.Domain.Entities
+﻿using QuickOrder.Core.Domain.Entities.Base;
+
+namespace QuickOrder.Core.Domain.Entities
 {
     public class Carrinho : EntityMongoBase
     {

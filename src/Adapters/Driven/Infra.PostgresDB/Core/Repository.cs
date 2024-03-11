@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using QuickOrder.Core.Domain.Adapters;
-using QuickOrder.Core.Domain.Entities;
+using QuickOrder.Core.Domain.Adapters.Base;
+using QuickOrder.Core.Domain.Entities.Base;
 using System.Linq.Expressions;
 
 namespace QuickOrder.Adapters.Driven.PostgresDB.Core

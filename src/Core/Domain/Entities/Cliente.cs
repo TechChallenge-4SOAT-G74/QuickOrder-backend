@@ -1,4 +1,6 @@
-﻿using QuickOrder.Core.Domain.ValueObjects;
+﻿using QuickOrder.Core.Domain.Adapters.Base;
+using QuickOrder.Core.Domain.Entities.Base;
+using QuickOrder.Core.Domain.ValueObjects;
 
 namespace QuickOrder.Core.Domain.Entities
 {

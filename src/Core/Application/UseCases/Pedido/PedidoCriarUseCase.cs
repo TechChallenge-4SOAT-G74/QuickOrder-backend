@@ -1,4 +1,4 @@
-﻿using QuickOrder.Core.Application.Dtos;
+﻿using QuickOrder.Core.Application.Dtos.Base;
 using QuickOrder.Core.Application.UseCases.Pedido.Interfaces;
 using QuickOrder.Core.Domain.Adapters;
 using QuickOrder.Core.Domain.Entities;
@@ -10,17 +10,17 @@ namespace QuickOrder.Core.Application.UseCases.Pedido
 {
     public class PedidoCriarUseCase : IPedidoCriarUseCase
     {
-        private readonly IPedidoRepository _pedidoRepository;
-        private readonly IClienteRepository _clienteRepository;
-        private readonly ICarrinhoRepository _carrinhoRepository;
-        private readonly IPedidoStatusRepository _pedidoStatusRepository;
+        private readonly IPedidoGateway _pedidoGateway;
+        private readonly IClienteGateway _clienteGateway;
+        private readonly ICarrinhoGateway _carrinhoGateway;
+        private readonly IPedidoStatusGateway _pedidoStatusGateway;
 
-        public PedidoCriarUseCase(IPedidoRepository pedidoRepository, IClienteRepository clienteRepository, ICarrinhoRepository carrinhoRepository, IPedidoStatusRepository pedidoStatusRepository)
+        public PedidoCriarUseCase(IPedidoGateway pedidoGateway, IClienteGateway clienteGateway, ICarrinhoGateway carrinhoGateway, IPedidoStatusGateway pedidoStatusGateway)
         {
-            _pedidoRepository = pedidoRepository;
-            _clienteRepository = clienteRepository;
-            _carrinhoRepository = carrinhoRepository;
-            _pedidoStatusRepository = pedidoStatusRepository;
+            _pedidoGateway = pedidoGateway;
+            _clienteGateway = clienteGateway;
+            _carrinhoGateway = carrinhoGateway;
+            _pedidoStatusGateway = pedidoStatusGateway;
         }
 
         public async Task<ServiceResult> CriarPedido(int? numeroCliente = null)
@@ -31,14 +31,14 @@ namespace QuickOrder.Core.Application.UseCases.Pedido
             try
             {
 
-                var numeroPedido = _pedidoRepository.GetAll().Result.Select(x => x.Id).OrderByDescending(x => x).FirstOrDefault() + 1;
+                var numeroPedido = _pedidoGateway.GetAll().Result.Select(x => x.Id).OrderByDescending(x => x).FirstOrDefault() + 1;
                 var carrinho = new Carrinho(numeroPedido, numeroCliente, 0, DateTime.Now, null);
                 var pedido = new PedidoEntity(numeroPedido, DateTime.Now, null, numeroCliente, carrinho.Id.ToString(), null, 0, false);
                 var pedidoStatus = new PedidoStatus(numeroPedido, EStatusPedidoExtensions.ToDescriptionString(EStatusPedido.Criado), DateTime.Now);
 
-                await _carrinhoRepository.Create(carrinho);
-                await _pedidoStatusRepository.Create(pedidoStatus);
-                await _pedidoRepository.Insert(pedido);
+                await _carrinhoGateway.Create(carrinho);
+                await _pedidoStatusGateway.Create(pedidoStatus);
+                await _pedidoGateway.Insert(pedido);
             }
             catch (Exception ex)
             {

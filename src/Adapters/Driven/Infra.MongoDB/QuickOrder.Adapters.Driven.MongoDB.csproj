@@ -8,8 +8,11 @@
 
   <ItemGroup>
     <Compile Remove="Mapping\**" />
+    <Compile Remove="Repositories\**" />
     <EmbeddedResource Remove="Mapping\**" />
+    <EmbeddedResource Remove="Repositories\**" />
     <None Remove="Mapping\**" />
+    <None Remove="Repositories\**" />
   </ItemGroup>
 
   <ItemGroup>

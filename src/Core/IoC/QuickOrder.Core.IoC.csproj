@@ -11,9 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\QuickOrder.Core.Gateway\QuickOrder.Core.Gateway.csproj" />
     <ProjectReference Include="..\..\Adapters\Driven\Infra.MongoDB\QuickOrder.Adapters.Driven.MongoDB.csproj" />
     <ProjectReference Include="..\..\Adapters\Driven\Infra.PostgresDB\QuickOrder.Adapters.Driven.PostgresDB.csproj" />
-    <ProjectReference Include="..\..\Adapters\Driven\Infra.ServiceBus\QuickOrder.Adapters.Driven.ServiceBus.csproj" />
     <ProjectReference Include="..\Application\QuickOrder.Core.Application.csproj" />
     <ProjectReference Include="..\Domain\QuickOrder.Core.Domain.csproj" />
   </ItemGroup>

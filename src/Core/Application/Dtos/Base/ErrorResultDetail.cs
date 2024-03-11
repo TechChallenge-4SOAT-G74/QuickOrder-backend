@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace QuickOrder.Core.Application.Dtos
+namespace QuickOrder.Core.Application.Dtos.Base
 {
     public class ErrorResultDetail
     {

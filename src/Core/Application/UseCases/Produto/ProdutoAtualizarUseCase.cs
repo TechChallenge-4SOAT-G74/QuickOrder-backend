@@ -1,4 +1,5 @@
 ﻿using QuickOrder.Core.Application.Dtos;
+using QuickOrder.Core.Application.Dtos.Base;
 using QuickOrder.Core.Application.UseCases.Produto.Interfaces;
 using QuickOrder.Core.Domain.Enums;
 using QuickOrder.Core.Domain.Repositories;
@@ -8,13 +9,13 @@ namespace QuickOrder.Core.Application.UseCases.Produto
 {
     public class ProdutoAtualizarUseCase : ProdutoUseCase, IProdutoAtualizarUseCase
     {
-        private readonly IProdutoRepository _produtoRepository;
-        private readonly IProdutoItemRepository _produtoItemRepository;
+        private readonly IProdutoGateway _produtoGateway;
+        private readonly IProdutoItemGateway _produtoItemGateway;
 
-        public ProdutoAtualizarUseCase(IProdutoRepository produtoRepository, IProdutoItemRepository produtoItemRepository)
+        public ProdutoAtualizarUseCase(IProdutoGateway produtoGateway, IProdutoItemGateway produtoItemGateway)
         {
-            _produtoRepository = produtoRepository;
-            _produtoItemRepository = produtoItemRepository;
+            _produtoGateway = produtoGateway;
+            _produtoItemGateway = produtoItemGateway;
         }
 
         public async Task<ServiceResult> Execute(ProdutoDto produtoViewModel, int id)
@@ -22,7 +23,7 @@ namespace QuickOrder.Core.Application.UseCases.Produto
             ServiceResult result = new();
             try
             {
-                var produtoExiste = await _produtoRepository.GetFirst(id);
+                var produtoExiste = await _produtoGateway.GetFirst(id);
 
                 if (produtoExiste == null)
                 {
@@ -36,13 +37,13 @@ namespace QuickOrder.Core.Application.UseCases.Produto
                 produtoExiste.Descricao = produtoViewModel.Descricao ?? null;
                 produtoExiste.Foto = produtoViewModel.Foto ?? null;
 
-                await _produtoRepository.Update(produtoExiste);
+                await _produtoGateway.Update(produtoExiste);
 
                 if (produtoViewModel.ProdutoItens != null)
                 {
                     var produtoItens = ProdutoItens(produtoViewModel.ProdutoItens, produtoExiste.Id);
 
-                    await _produtoItemRepository.Insert(produtoItens);
+                    await _produtoItemGateway.Insert(produtoItens);
                 }
 
             }
