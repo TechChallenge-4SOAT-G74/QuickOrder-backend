@@ -1,12 +1,10 @@
-﻿using MongoDB.Bson;
-using MongoDB.Driver;
+﻿using MongoDB.Driver;
 using QuickOrder.Core.Domain.Adapters.Base;
-using QuickOrder.Core.Domain.Entities.Base;
 using ServiceStack;
 
 namespace QuickOrder.Adapters.Driven.MongoDB.Core
 {
-    public abstract class BaseMongoDBRepository<TEntity> : IBaseMongoDBRepository<TEntity> where TEntity : EntityMongoBase
+    public abstract class BaseMongoDBRepository<TEntity> : IBaseMongoDBRepository<TEntity> where TEntity : class
     {
         protected readonly IMondoDBContext _mondoDBContext;
         protected IMongoCollection<TEntity> _dbCollection;
@@ -25,13 +23,13 @@ namespace QuickOrder.Adapters.Driven.MongoDB.Core
 
         public void Delete(string id)
         {
-            var objectId = new ObjectId(id);
+            var objectId = Convert.ToInt32(id);
             _dbCollection.DeleteOneAsync(Builders<TEntity>.Filter.Eq("_id", objectId));
         }
 
         public async Task<TEntity> Get(string id)
         {
-            var objectId = new ObjectId(id);
+            var objectId = Convert.ToInt32(id);
             FilterDefinition<TEntity> filter = Builders<TEntity>.Filter.Eq("_id", objectId);
             return await _dbCollection.FindAsync(filter).Result.FirstOrDefaultAsync();
         }
