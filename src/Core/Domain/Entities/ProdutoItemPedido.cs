@@ -7,7 +7,7 @@ namespace QuickOrder.Core.Domain.Entities
     {
         public ProdutoItemPedido()
         {
-                
+
         }
         public ProdutoItemPedido(ProdutoItem? produtoItem, int? pedidoId)
         {

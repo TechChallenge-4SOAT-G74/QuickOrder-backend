@@ -3,6 +3,7 @@
     public class DatabaseSettings
     {
         public string ConnectionString { get; set; } = null!;
+        public string SecretManagerKey { get; set; }
     }
 
     public class DatabaseMongoDBSettings : DatabaseSettings

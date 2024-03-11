@@ -1,8 +1,6 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Driver;
-using QuickOrder.Core.Domain.Adapters;
 using QuickOrder.Core.Domain.Adapters.Base;
-using QuickOrder.Core.Domain.Entities;
 using QuickOrder.Core.Domain.Entities.Base;
 using ServiceStack;
 

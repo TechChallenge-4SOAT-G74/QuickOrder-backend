@@ -2,7 +2,6 @@
 using QuickOrder.Core.Application.Dtos.Base;
 using QuickOrder.Core.Application.UseCases.Cliente.Interfaces;
 using QuickOrder.Core.Domain.Repositories;
-using System.Runtime.InteropServices;
 
 namespace QuickOrder.Core.Application.UseCases.Cliente
 {
