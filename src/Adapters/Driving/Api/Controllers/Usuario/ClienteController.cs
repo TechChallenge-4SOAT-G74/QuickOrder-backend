@@ -32,6 +32,7 @@ namespace QuickOrder.Adapters.Driving.Api.Controllers.cliente
         /// </summary>
         /// <returns></returns>
         [HttpGet]
+        [ApiExplorerSettings(IgnoreApi = false)]
         public async Task<IActionResult> Get()
         {
             return Result(await _clienteObterUseCase.Execute());
@@ -43,6 +44,7 @@ namespace QuickOrder.Adapters.Driving.Api.Controllers.cliente
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
+        [ApiExplorerSettings(IgnoreApi = false)]
         public async Task<IActionResult> Get(int id)
         {
             return Result(await _clienteObterUseCase.Execute(id));
@@ -54,6 +56,7 @@ namespace QuickOrder.Adapters.Driving.Api.Controllers.cliente
         /// <param name="cliente"></param>
         /// <returns></returns>
         [HttpPost]
+        [ApiExplorerSettings(IgnoreApi = false)]
         public async Task<IActionResult> Post([FromBody] ClienteDto cliente)
         {
             return Result(await _clienteCriarUseCase.Execute(cliente));
@@ -65,6 +68,7 @@ namespace QuickOrder.Adapters.Driving.Api.Controllers.cliente
         /// <param name="id"></param>
         /// <param name="cliente"></param>
         [HttpPut("{id}")]
+        [ApiExplorerSettings(IgnoreApi = false)]
         public async Task<IActionResult> Put([FromBody] ClienteDto cliente, int id)
         {
             return Result(await _clienteatualizarUseCase.Execute(cliente, id));
@@ -76,6 +80,7 @@ namespace QuickOrder.Adapters.Driving.Api.Controllers.cliente
         /// </summary>
         /// <param name="id"></param>
         [HttpDelete("{id}")]
+        [ApiExplorerSettings(IgnoreApi = false)]
         public async Task<IActionResult> Delete(int id)
         {
             return Result(await _clienteExcluirUseCase.Execute(id));
