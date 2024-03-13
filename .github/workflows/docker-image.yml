@@ -12,9 +12,11 @@ on:
   workflow_dispatch:
     inputs:
       secret-name:
+        description: 'secret-name'
         default: 'DOCKERHUB_USERNAME'
         required: true
       secret-value:
+        description: 'secret-value'
         default: 'DOCKERHUB_TOKEN'
         required: true
       repo-name:
@@ -23,7 +25,7 @@ on:
         required: true
         
 jobs:
-  docker:
+  dockerhub:
     runs-on: ubuntu-latest
     steps:         
       - name: Checkout
