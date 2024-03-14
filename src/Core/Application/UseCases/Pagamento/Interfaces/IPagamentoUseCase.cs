@@ -1,6 +1,6 @@
 ﻿using QuickOrder.Adapters.Driven.MercadoPago.Requests;
 using QuickOrder.Adapters.Driven.MercadoPago.Responses;
-using QuickOrder.Core.Application.Dtos;
+using QuickOrder.Core.Application.Dtos.Base;
 
 namespace QuickOrder.Core.Application.UseCases.Pagamento.Interfaces
 {

@@ -1,4 +1,4 @@
-﻿namespace QuickOrder.Core.Domain.Adapters
+﻿namespace QuickOrder.Core.Domain.Adapters.Base
 {
     public interface IBaseMongoDBRepository<TEntity> where TEntity : class
     {

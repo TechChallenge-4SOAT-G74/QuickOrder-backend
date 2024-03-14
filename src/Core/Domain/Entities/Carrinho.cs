@@ -1,6 +1,9 @@
-﻿namespace QuickOrder.Core.Domain.Entities
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
+namespace QuickOrder.Core.Domain.Entities
 {
-    public class Carrinho : EntityMongoBase
+    public class Carrinho
     {
         public Carrinho(int numeroPedido, int? numeroCliente, double valor, DateTime dataAtualizacao, List<ProdutoCarrinho>? produtosCarrinho)
         {
@@ -13,6 +16,8 @@
             CalculaValorPedido();
         }
 
+        [BsonId]
+        public ObjectId Id { get; set; } = ObjectId.GenerateNewId();
         public int NumeroPedido { get; set; }
         public int? NumeroCliente { get; set; }
         public double Valor { get; set; }

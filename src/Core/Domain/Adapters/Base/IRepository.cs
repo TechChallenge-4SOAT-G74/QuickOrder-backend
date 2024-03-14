@@ -1,7 +1,7 @@
-﻿using QuickOrder.Core.Domain.Entities;
+﻿using QuickOrder.Core.Domain.Entities.Base;
 using System.Linq.Expressions;
 
-namespace QuickOrder.Core.Domain.Adapters
+namespace QuickOrder.Core.Domain.Adapters.Base
 {
     public interface IRepository<T> where T : EntityBase
     {

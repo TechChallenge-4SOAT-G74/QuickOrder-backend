@@ -1,4 +1,4 @@
-﻿using QuickOrder.Core.Application.Dtos;
+﻿using QuickOrder.Core.Application.Dtos.Base;
 using QuickOrder.Core.Application.UseCases.Produto.Interfaces;
 using QuickOrder.Core.Domain.Repositories;
 
@@ -6,11 +6,11 @@ namespace QuickOrder.Core.Application.UseCases.Produto
 {
     public class ProdutoExcluirUseCase : IProdutoExcluirUseCase
     {
-        private readonly IProdutoRepository _produtoRepository;
+        private readonly IProdutoGateway _produtoGateway;
 
-        public ProdutoExcluirUseCase(IProdutoRepository produtoRepository)
+        public ProdutoExcluirUseCase(IProdutoGateway produtoGateway)
         {
-            _produtoRepository = produtoRepository;
+            _produtoGateway = produtoGateway;
         }
 
         public async Task<ServiceResult> Execute(int id)
@@ -18,14 +18,14 @@ namespace QuickOrder.Core.Application.UseCases.Produto
             ServiceResult result = new();
             try
             {
-                var produtoExiste = await _produtoRepository.GetFirst(id);
+                var produtoExiste = await _produtoGateway.GetFirst(id);
 
                 if (produtoExiste == null)
                 {
                     result.AddError("Produto não encontrado.");
                     return result;
                 }
-                await _produtoRepository.Delete(id);
+                await _produtoGateway.Delete(id);
             }
             catch (Exception ex) { result.AddError(ex.Message); }
             return result;

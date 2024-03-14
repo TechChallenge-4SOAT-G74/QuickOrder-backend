@@ -1,4 +1,6 @@
-﻿namespace QuickOrder.Core.Domain.Entities
+﻿using QuickOrder.Core.Domain.Adapters.Base;
+
+namespace QuickOrder.Core.Domain.Entities.Base
 {
     public abstract class EntityBase : IEntityBase
     {

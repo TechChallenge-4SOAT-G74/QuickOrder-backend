@@ -1,7 +1,7 @@
 ﻿using FluentValidation.Results;
 using Microsoft.AspNetCore.Http;
 
-namespace QuickOrder.Core.Application.Dtos
+namespace QuickOrder.Core.Application.Dtos.Base
 {
     //OWASP: https://cheatsheetseries.owasp.org/cheatsheets/AJAX_Security_Cheat_Sheet.html
     public class ServiceResult<T> : ServiceResult

@@ -1,4 +1,4 @@
-﻿namespace QuickOrder.Core.Domain.Repositories
+﻿namespace QuickOrder.Core.Domain.Adapters.Base
 {
     public interface IBaseRepository
     {

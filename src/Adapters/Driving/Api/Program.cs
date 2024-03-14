@@ -3,7 +3,8 @@ using Microsoft.OpenApi.Models;
 using MongoDB.Driver;
 using QuickOrder.Adapters.Driven.PostgresDB.Core;
 using QuickOrder.Adapters.Driving.Api.Configurations;
-using QuickOrder.Core.Domain.Entities;
+using QuickOrder.Core.Domain.Entities.Base;
+using QuickOrder.Core.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -72,6 +73,8 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "QuickOrder.Api", Version = "v1" });
 });
 
+builder.Services.ConfigureHealthChecks(builder.Configuration.GetSection("DatabaseMongoDBSettings").Get<DatabaseMongoDBSettings>(), builder.Configuration.GetSection("DatabaseSettings").Get<DatabaseSettings>());
+
 var app = builder.Build();
 
 
@@ -87,6 +90,8 @@ using (var scope = app.Services.CreateScope())
 app.UseSwagger();
 app.UseSwaggerUI();
 //}
+
+app.ConfigureHealthCheckEndpoints();
 
 app.UseReDoc(c =>
 {

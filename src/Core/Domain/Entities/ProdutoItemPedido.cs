@@ -1,10 +1,13 @@
-﻿namespace QuickOrder.Core.Domain.Entities
+﻿using QuickOrder.Core.Domain.Adapters.Base;
+using QuickOrder.Core.Domain.Entities.Base;
+
+namespace QuickOrder.Core.Domain.Entities
 {
     public class ProdutoItemPedido : EntityBase, IAggregateRoot
     {
         public ProdutoItemPedido()
         {
-                
+
         }
         public ProdutoItemPedido(ProdutoItem? produtoItem, int? pedidoId)
         {
