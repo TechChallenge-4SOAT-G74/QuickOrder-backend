@@ -42,7 +42,7 @@ jobs:
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f src/Adapters/Driving/Api/Dockerfile .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f src
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG src
 
     - name: Update kube config
       run: aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION
