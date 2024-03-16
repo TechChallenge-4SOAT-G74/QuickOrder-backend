@@ -43,7 +43,7 @@ jobs:
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}        
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
-#      uses: docker/build-push-action@v5
+      uses: docker/build-push-action@v5
       with:
         context: ./src
         file: src/Adapters/Driving/Api/Dockerfile
