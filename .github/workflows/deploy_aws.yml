@@ -45,7 +45,7 @@ jobs:
         context: ./src
         file: src/Adapters/Driving/Api/Dockerfile
         push: true
-        tags: ${{ steps.commit.outputs.short }} $ECR_REGISTRY/${{ steps.login-ecr.outputs.registry }}:${{ steps.commit.outputs.short }}
+        tags: ${{ steps.login-ecr.outputs.registry }}:${{ steps.commit.outputs.short }}
 
 
 #      env:
