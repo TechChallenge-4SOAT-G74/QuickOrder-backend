@@ -45,6 +45,7 @@ jobs:
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f src/Adapters/Driving/Api/Dockerfile . .
+        docker tag quickorder-backend:latest 590183827841.dkr.ecr.us-east-1.amazonaws.com/quickorder-backend:latest
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG 
         echo "IMAGE $IMAGE_TAG is pushed to $ECR_REGISTRY/$ECR_REPOSITORY"
         echo "image_tag=$IMAGE_TAG" 
