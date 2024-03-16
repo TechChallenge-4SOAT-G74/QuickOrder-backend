@@ -56,8 +56,8 @@ jobs:
           echo "image_tag=$IMAGE_TAG" 
           echo "full_image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
-#    - name: Update kube config
-#      run: aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION
+    - name: Update kube config
+      run: aws eks update-kubeconfig --name $EKS_CLUSTER_NAME --region $AWS_REGION
 
 
 #    - name: Deploy to EKS
