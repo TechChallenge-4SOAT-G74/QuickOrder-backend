@@ -7,10 +7,6 @@ on:
     branches: [ main ]
   workflow_dispatch:
     inputs:
-      secret-name:
-        description: 'secret-name'
-        default: 'INFRA-KS8-TOKEN'
-        required: true
       repo-name:
         description: 'Repo scripts ks8'
         default: quickOrder-infra-kubernetes
@@ -69,7 +65,6 @@ jobs:
       with:
         repository: ${{env.REPO_SCRIPTS}}
         path: .
-        token: ${{ secrets.INFRA-KS8-TOKEN }}
 
     - name: Copy scripts KS8 file
       run: bash ./.github/scripts/
