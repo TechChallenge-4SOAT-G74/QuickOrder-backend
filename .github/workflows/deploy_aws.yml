@@ -47,8 +47,8 @@ jobs:
 
     - name: Push image to Amazon ECR
       run: |
-          docker tag $ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker tag $IMAGE_TAG $ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:tag
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:tag
           echo "IMAGE $IMAGE_TAG is pushed to $ECR_REGISTRY/$ECR_REPOSITORY"
           echo "image_tag=$IMAGE_TAG" 
           echo "full_image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG      
