@@ -19,9 +19,8 @@ env:
 
 
 jobs:
-  push_ecr:
+  deploy_eks:
     runs-on: ubuntu-latest
-    if: false
     steps:
     - name: Set short git commit SHA
       id: commit
@@ -54,30 +53,6 @@ jobs:
         run: |
           echo ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}}
 
-  deploy_eks:
-    name: deploy to cluster
-    runs-on: ubuntu-latest
-#    if: false
-#    needs: push_ecr
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-      
-    - name: Install Kubectl
-      uses: azure/setup-kubectl@v3
-      id: install
-      
-    - name: Configure AWS credentials
-      uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ${{env.AWS_REGION}}
-    
-    - name: Login to Amazon ECR
-      id: login-ecr
-      uses: aws-actions/amazon-ecr-login@v1
-
     - name: Update kube config
       run: aws eks update-kubeconfig --name ${{env.EKS_CLUSTER_NAME}} --region ${{env.AWS_REGION}}
 
@@ -85,13 +60,8 @@ jobs:
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}        
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
-      with:
-        secrets: |
-          DOCKERHUB_TOKEN=${{ secrets.DOCKERHUB_TOKEN }}   
-        run: |
-          sed -i.bak "s|DOCKER_IMAGE|${{env.ECR_REGISTRY }}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}}|g" scripts/ks8/01-pvc && \
-          kubectl apply -f scripts/ks8/01-pvc
-          kubectl apply -f scripts/ks8/02-deployments
-          kubectl apply -f scripts/ks8/03-services
-
-# https://medium.com/hostspaceng/triggering-workflows-in-another-repository-with-github-actions-4f581f8e0ceb
+      run: |
+        sed -i.bak "s|DOCKER_IMAGE|${{env.ECR_REGISTRY }}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}}|g" scripts/ks8/01-pvc && \
+        kubectl apply -f scripts/ks8/01-pvc
+        kubectl apply -f scripts/ks8/02-deployments
+        kubectl apply -f scripts/ks8/03-services
