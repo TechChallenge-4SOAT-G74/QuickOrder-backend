@@ -5,18 +5,10 @@ on:
     branches: [ main, feature/deploy_aws ]
   pull_request:
     branches: [ main ]
-  workflow_dispatch:
-    inputs:
-      repo-name:
-        description: 'Repo scripts ks8'
-        default: quickOrder-infra-kubernetes
-        required: true
 env:
   ECR_REPOSITORY: quickorder-backend
   EKS_CLUSTER_NAME: quickorder-eks 
   AWS_REGION: us-east-1
-  REPO_SCRIPTS: TechChallenge-4SOAT-G74/QuickOrder-Infra-Kubernetes
-
 
 jobs:
   deploy_eks:
@@ -61,7 +53,6 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}        
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
       run: |
-        sed -i.bak "s|DOCKER_IMAGE|${{env.ECR_REGISTRY }}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}}|g" scripts/ks8/01-pvc && \
         kubectl apply -f scripts/ks8/01-pvc
         kubectl apply -f scripts/ks8/02-deployments
         kubectl apply -f scripts/ks8/03-services
