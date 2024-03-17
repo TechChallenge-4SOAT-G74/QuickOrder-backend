@@ -42,14 +42,15 @@ jobs:
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}        
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
-      uses: docker/build-push-action@v5
-      with:
-        context: ./src
-        file: src/Adapters/Driving/Api/Dockerfile
-        push: true
-        tags: ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}}
+     # uses: docker/build-push-action@v5
+     # with:
+     #   context: ./src
+     #   file: src/Adapters/Driving/Api/Dockerfile
+     #   push: true
+     #   tags: ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}}
         run: |
-          echo ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}}
+           docker build -f src/Adapters/Driving/Api/Dockerfile -t ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}} -t ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}}:latest .
+           docker push -a  ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}
 
     - name: Update kube config
       run: aws eks update-kubeconfig --name ${{env.EKS_CLUSTER_NAME}} --region ${{env.AWS_REGION}}
