@@ -87,8 +87,8 @@ jobs:
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
       run: |
         ls
-        kubectl apply -f 01-pvc
-        kubectl apply -f 02-deployments
-        kubectl apply -f 03-services
+        kubectl apply -f scripts/ks8/01-pvc
+        kubectl apply -f scripts/ks8/02-deployments
+        kubectl apply -f scripts/ks8/03-services
 
 # https://medium.com/hostspaceng/triggering-workflows-in-another-repository-with-github-actions-4f581f8e0ceb
