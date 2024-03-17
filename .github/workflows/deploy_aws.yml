@@ -64,12 +64,9 @@ jobs:
         repository: ${{env.REPO_SCRIPTS}}
         path: ./
         #token: ${{ secrets.PRIVATE_ACCESS_TOKEN }}
+        run: |
+          ls
 
-    - uses: ./.github/shared-actions/action-name
-      with:
-         path: ./kubernetes
-         run: |
-           ls
 
         
   deploy_eks:
