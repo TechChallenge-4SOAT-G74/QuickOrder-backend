@@ -17,9 +17,12 @@ spec:
       containers:
         - name: quickordercontainer
           image: 590183827841.dkr.ecr.us-east-1.amazonaws.com/quickorder-backend:latest
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           ports:
-            - containerPort: 80
+          - containerPort: 8080
+            name: http-server
+          - containerPort: 9090
+            name: grpc-server
           env:
             - name: "ASPNETCORE_ENVIRONMENT"
               value: "Production"
