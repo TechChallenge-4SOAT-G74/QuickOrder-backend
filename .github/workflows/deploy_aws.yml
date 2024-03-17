@@ -45,7 +45,7 @@ jobs:
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
       uses: docker/build-push-action@v5
       with:
-        context: ./src
+        context: .
         file: src/Adapters/Driving/Api/Dockerfile
         push: true
         tags: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
