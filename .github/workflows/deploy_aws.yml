@@ -58,7 +58,7 @@ jobs:
     name: deploy to cluster
     runs-on: ubuntu-latest
 #    if: false
-    needs: push_ecr
+#    needs: push_ecr
     steps:
     - name: Checkout
       uses: actions/checkout@v3
