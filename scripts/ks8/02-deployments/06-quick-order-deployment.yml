@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: quickordercontainer
-          image: 28101976/quickorder-backend:latest
+          image: 590183827841.dkr.ecr.us-east-1.amazonaws.com/quickorder-backend:latest
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 80
