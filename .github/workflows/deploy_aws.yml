@@ -7,6 +7,10 @@ on:
     branches: [ main ]
   workflow_dispatch:
     inputs:
+      secret-name:
+        description: 'secret-name'
+        default: 'INFRA-KS8-TOKEN'
+        required: true
       repo-name:
         description: 'Repo scripts ks8'
         default: quickOrder-infra-kubernetes
@@ -15,7 +19,7 @@ env:
   ECR_REPOSITORY: quickorder-backend
   EKS_CLUSTER_NAME: quickorder-eks 
   AWS_REGION: us-east-1
-  REPO_SCRIPTS: quickOrder-infra-kubernetes
+  REPO_SCRIPTS: TechChallenge-4SOAT-G74/QuickOrder-Infra-Kubernetes
 
 
 jobs:
@@ -53,7 +57,30 @@ jobs:
         run: |
           echo ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}}
 
-          
+  copy_scripts-ks8: 
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: Check out project
+      uses: actions/checkout@v3
+
+    - name: Check out QuickOrder-Kubernetes project
+      uses: actions/checkout@v3
+      with:
+        repository: ${{env.REPO_SCRIPTS}}
+        path: .
+        token: ${{ secrets.INFRA-KS8-TOKEN }}
+
+    - name: Copy scripts KS8 file
+      run: bash ./.github/scripts/
+      env:
+        DESTINATION_PATH: ./kubernetes/
+   
+    - name: Push to kubernetes repo
+      run: bash ./.github/scripts/
+      env:
+        BRANCH: develop
+        
   deploy_eks:
     name: deploy to cluster
     runs-on: ubuntu-latest
