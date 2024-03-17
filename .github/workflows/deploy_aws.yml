@@ -44,7 +44,7 @@ jobs:
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
       run: |
          cd src
-         docker build -f Adapters/Driving/Api/Dockerfile -t ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}} -t latest.
+         docker build -f Adapters/Driving/Api/Dockerfile -t ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}} -t latest .
          docker push -a ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}
 
     - name: Update kube config
