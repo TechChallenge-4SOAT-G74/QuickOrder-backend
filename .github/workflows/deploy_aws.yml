@@ -45,7 +45,7 @@ jobs:
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
       uses: docker/build-push-action@v5
       with:
-        context: .
+        context: ./src
         file: src/Adapters/Driving/Api/Dockerfile
         push: true
         tags: ${{env.ECR_REGISTRY}}/${{env.AWS_REGION}}:${{env.IMAGE_TAG}}
