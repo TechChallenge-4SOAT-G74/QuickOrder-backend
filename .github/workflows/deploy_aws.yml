@@ -85,10 +85,13 @@ jobs:
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}        
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
-      run: |
-        sed -i.bak "s|DOCKER_IMAGE|${{env.ECR_REGISTRY }}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}}|g" scripts/ks8/01-pvc && \
-        kubectl apply -f scripts/ks8/01-pvc
-        kubectl apply -f scripts/ks8/02-deployments
-        kubectl apply -f scripts/ks8/03-services
+      with:
+        secrets: |
+          DOCKERHUB_TOKEN=${{ secrets.DOCKERHUB_TOKEN }}   
+        run: |
+          sed -i.bak "s|DOCKER_IMAGE|${{env.ECR_REGISTRY }}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}}|g" scripts/ks8/01-pvc && \
+          kubectl apply -f scripts/ks8/01-pvc
+          kubectl apply -f scripts/ks8/02-deployments
+          kubectl apply -f scripts/ks8/03-services
 
 # https://medium.com/hostspaceng/triggering-workflows-in-another-repository-with-github-actions-4f581f8e0ceb
