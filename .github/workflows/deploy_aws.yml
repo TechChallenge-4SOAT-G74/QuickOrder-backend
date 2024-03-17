@@ -53,6 +53,8 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}        
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
       run: |
+        kubectl get svc
+        kubectl apply -f scripts/ks8/aws-auth.yml
         kubectl apply -f scripts/ks8/01-pvc/01-pvc-postgres.yml
         kubectl apply -f scripts/ks8/01-pvc/02-pvc-mongo.yml
         kubectl apply -f scripts/ks8/02-deployments/03-secrets.yml
