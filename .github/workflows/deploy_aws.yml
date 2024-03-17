@@ -40,7 +40,7 @@ jobs:
         context: ./src
         file: src/Adapters/Driving/Api/Dockerfile
         tag: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        push: push     
+        push: true     
 
 #    - name: Push image to Amazon ECR
 #      run: |
