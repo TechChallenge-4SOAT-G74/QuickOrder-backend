@@ -21,7 +21,7 @@ env:
 jobs:
   push_ecr:
     runs-on: ubuntu-latest
-    if: false
+#    if: false
     steps:
     - name: Set short git commit SHA
       id: commit
@@ -54,26 +54,11 @@ jobs:
         run: |
           echo ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}}
 
-  copy_scripts_ks8: 
-    runs-on: ubuntu-latest
-   # needs: push_ecr
-    steps:
-    - name: Checkout private actions
-      uses: actions/checkout@v2
-      with:
-        repository: ${{env.REPO_SCRIPTS}}
-        path: ./
-        #token: ${{ secrets.PRIVATE_ACCESS_TOKEN }}
-        run: |
-          ls
-
-
-        
   deploy_eks:
     name: deploy to cluster
     runs-on: ubuntu-latest
-    if: false
-    needs: copy_scripts_ks8
+#    if: false
+    needs: push_ecr
     steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -101,8 +86,9 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}        
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
       run: |
-        kubectl apply -k https://github.com/TechChallenge-4SOAT-G74/QuickOrder-Infra-Kubernetes/tree/main/01-pvc
-        kubectl apply -k https://github.com/TechChallenge-4SOAT-G74/QuickOrder-Infra-Kubernetes/tree/main/02-deployments
-        kubectl apply -k https://github.com/TechChallenge-4SOAT-G74/QuickOrder-Infra-Kubernetes/tree/main/03-services
+        ls
+        kubectl apply -f 01-pvc
+        kubectl apply -f 02-deployments
+        kubectl apply -f 03-services
 
 # https://medium.com/hostspaceng/triggering-workflows-in-another-repository-with-github-actions-4f581f8e0ceb
