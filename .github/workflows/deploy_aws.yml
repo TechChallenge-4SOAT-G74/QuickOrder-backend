@@ -19,47 +19,47 @@ env:
 
 
 jobs:
-#  push-ecr:
-#    runs-on: ubuntu-latest
-#    steps:
-#    - name: Set short git commit SHA
-#      id: commit
-#      uses: prompt/actions-commit-hash@v2
-#
-#    - name: Check out code
-#      uses: actions/checkout@v2
-#
-#    - name: Configure AWS credentials
-#      uses: aws-actions/configure-aws-credentials@v1
-#      with:
-#        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#        aws-region: ${{env.AWS_REGION}}
-#
-#    - name: Login to Amazon ECR
-#      id: login-ecr
-#      uses: aws-actions/amazon-ecr-login@v1
-#  
-#    - name: Build, tag, and push image to Amazon ECR
-#      env:
-#        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}        
-#        IMAGE_TAG: ${{ steps.commit.outputs.short }}
-#      uses: docker/build-push-action@v5
-#      with:
-#        context: ./src
-#        file: src/Adapters/Driving/Api/Dockerfile
-#        push: true
-#        tags: ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}}
-#        run: |
-#          echo ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}}
+  push-ecr:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set short git commit SHA
+      id: commit
+      uses: prompt/actions-commit-hash@v2
+
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{env.AWS_REGION}}
+
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+  
+    - name: Build, tag, and push image to Amazon ECR
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}        
+        IMAGE_TAG: ${{ steps.commit.outputs.short }}
+      uses: docker/build-push-action@v5
+      with:
+        context: ./src
+        file: src/Adapters/Driving/Api/Dockerfile
+        push: true
+        tags: ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}}
+        run: |
+          echo ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}}
 
   push-eks:
     runs-on: ubuntu-latest
-#    needs: push-ecr
+    needs: push-ecr
     
     steps:
- #   - name: Update kube config
- #     run: aws eks update-kubeconfig --name ${{env.EKS_CLUSTER_NAME}} --region ${{env.AWS_REGION}}
+    - name: Update kube config
+      run: aws eks update-kubeconfig --name ${{env.EKS_CLUSTER_NAME}} --region ${{env.AWS_REGION}}
 
     - name: Checkout reusable workflow dir
       uses: actions/checkout@v3
@@ -68,14 +68,14 @@ jobs:
        # token: ${{ secrets[env.TOKEN_NAME] }}
         path: .
 
- #   - name: Deploy to EKS
- #     env:
- #       ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}        
- #       IMAGE_TAG: ${{ steps.commit.outputs.short }}
- #       SCRIPT_REPOSITORY: 
- #     run: |
- #       sed -i.bak "s|DOCKER_IMAGE|${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}}|g" manifests/hello-app-deployment.yaml && \
- #       kubectl apply -f manifests/hello-app-deployment.yaml
- #       kubectl apply -f manifests/hello-app-service.yaml
+    - name: Deploy to EKS
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}        
+        IMAGE_TAG: ${{ steps.commit.outputs.short }}
+      run: |
+        sed -i.bak "s|DOCKER_IMAGE|${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}}|g" .\01-pvc\ && \
+        kubectl apply -f .\01-pvc\
+        kubectl apply -f .\02-deployments\
+        kubectl apply -f .\03-services\
 
 # https://medium.com/hostspaceng/triggering-workflows-in-another-repository-with-github-actions-4f581f8e0ceb
