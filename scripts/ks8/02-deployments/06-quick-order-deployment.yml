@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quick-order-deployment
+  labels:
+    app: quick-order
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quick-order
+  template:
+    metadata:
+      labels:
+        app: quick-order
+    spec:
+      containers:
+        - name: quickordercontainer
+          image: 28101976/quickorder-backend:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          env:
+            - name: "ASPNETCORE_ENVIRONMENT"
+              value: "Production"
+            - name: DatabaseSettings__ConnectionString
+              valueFrom:
+                secretKeyRef:
+                  name: quickorder-secrets
+                  key: postgres_connectionstring
+            - name: DatabaseMongoDBSettings__ConnectionString
+              valueFrom:
+                secretKeyRef:
+                  name: quickorder-secrets
+                  key: mongo_connectionstring
+            - name: DatabaseMongoDBSettings__DatabaseName
+              valueFrom:
+                secretKeyRef:
+                  name: quickorder-secrets
+                  key: mongo_db
+            - name: MercadoPagoSettings__AccessToken
+              valueFrom:
+                secretKeyRef:
+                  name: quickorder-secrets
+                  key: mercadopago_accesstoken
+            - name: MercadoPagoSettings__User_id
+              valueFrom:
+                secretKeyRef:
+                  name: quickorder-secrets
+                  key: mercadopago_user_id
+            - name: MercadoPagoSettings__External_pos_id
+              valueFrom:
+                secretKeyRef:
+                  name: quickorder-secrets
+                  key: mercadopago_external_pos_id
+            - name: MercadoPagoSettings__NotificationUrl
+              valueFrom:
+                secretKeyRef:
+                  name: quickorder-secrets
+                  key: mercadopago_notificationurl

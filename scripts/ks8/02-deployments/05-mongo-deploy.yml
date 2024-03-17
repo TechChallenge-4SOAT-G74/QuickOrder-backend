@@ -1,0 +1,77 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: mongodb-deployment
+# spec:
+#   replicas: 1
+#   selector:
+#     matchLabels:
+#       app: mongodb-svc
+#   template:
+#     metadata:
+#       labels:
+#         app: mongodb-svc
+#     spec:
+#       containers:
+#         - name: quickorderdb-mongodb
+#           image: mongo:latest
+#           ports:
+#             - containerPort: 27017
+#           env:
+#             - name: MONGO_INITDB_ROOT_USERNAME
+#               valueFrom:
+#                 secretKeyRef:
+#                   name: quickorder-secrets
+#                   key: mongo_username
+#             - name: MONGO_INITDB_ROOT_PASSWORD
+#               valueFrom:
+#                 secretKeyRef:
+#                   name: quickorder-secrets
+#                   key: mongo_password
+#             - name: MONGO_INITDB_DATABASE
+#               valueFrom:
+#                 secretKeyRef:
+#                   name: quickorder-secrets
+#                   key: mongo_db
+#           volumeMounts:
+#             - name: quickorderdb-mongodb-volume
+#               mountPath: /data/db
+#       volumes:
+#         - name: quickorderdb-mongodb-volume
+#           persistentVolumeClaim:
+#             claimName: mongo-pvc
+
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb-svc
+  template:
+    metadata:
+      labels:
+        app: mongodb-svc
+    spec:
+      containers:
+      - name: quickorderdb-mongodb
+        image: mongo:latest
+        ports:
+        - containerPort: 27017
+        env:
+        - name: MONGO_INITDB_ROOT_USERNAME
+          value: mongo
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          value: mongo
+        - name: MONGO_INITDB_DATABASE
+          value: quickorderdb
+        volumeMounts:
+        - name: quickorderdb-mongodb-volume
+          mountPath: /data/db
+      volumes:
+      - name: quickorderdb-mongodb-volume
+        persistentVolumeClaim:
+          claimName: mongo-pvc
