@@ -49,9 +49,9 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}        
         IMAGE_TAG: ${{ steps.commit.outputs.short }}
       run: |
-        kubectl apply -f scripts/ks8/01-pvc/01-pvc-postgres.yml
-        kubectl apply -f scripts/ks8/01-pvc/02-pvc-mongo.yml
-        kubectl apply -f scripts/ks8/02-deployments/03-secrets.yml
+        kubectl apply -f scripts/ks8/01-pvc/01-pvc-postgres.yml --validate=false
+        kubectl apply -f scripts/ks8/01-pvc/02-pvc-mongo.yml --validate=false
+        kubectl apply -f scripts/ks8/02-deployments/03-secrets.yml 
         kubectl apply -f scripts/ks8/02-deployments/04-postgres-deploy.yml
         kubectl apply -f scripts/ks8/02-deployments/05-mongo-deploy.yml
         kubectl apply -f scripts/ks8/02-deployments/06-quick-order-deployment.yml
