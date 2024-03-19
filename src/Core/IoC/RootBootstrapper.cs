@@ -3,7 +3,6 @@ using QuickOrder.Adapters.Driven.MercadoPago;
 using QuickOrder.Adapters.Driven.MercadoPago.Interfaces;
 using QuickOrder.Adapters.Driven.MongoDB.Core;
 using QuickOrder.Adapters.Driven.MongoDB.Repositories;
-using QuickOrder.Adapters.Driven.PostgresDB.Repositories;
 using QuickOrder.Core.Application.UseCases;
 using QuickOrder.Core.Application.UseCases.Cliente;
 using QuickOrder.Core.Application.UseCases.Cliente.Interfaces;
@@ -16,7 +15,9 @@ using QuickOrder.Core.Application.UseCases.Pedido.Interfaces;
 using QuickOrder.Core.Application.UseCases.Produto;
 using QuickOrder.Core.Application.UseCases.Produto.Interfaces;
 using QuickOrder.Core.Domain.Adapters;
+using QuickOrder.Core.Domain.Adapters.Base;
 using QuickOrder.Core.Domain.Repositories;
+using QuickOrder.Core.Gateway;
 
 namespace QuickOrder.Core.IoC
 {
@@ -31,21 +32,21 @@ namespace QuickOrder.Core.IoC
             services.AddImplementations(ServiceLifetime.Scoped, typeof(IBaseUseCase), assemblyTypes);
 
             //Repositories postgresDB
-            services.AddScoped<IClienteRepository, ClienteRepository>();
-            services.AddScoped<IFuncionarioRepository, FuncionarioRepository>();
-            services.AddScoped<IItemRepository, ItemRepository>();
-            services.AddScoped<IPedidoRepository, PedidoRepository>();
+            services.AddScoped<IClienteGateway, ClienteGateway>();
+            services.AddScoped<IFuncionarioGateway, FuncionarioGateway>();
+            services.AddScoped<IItemGateway, ItemGateway>();
+            services.AddScoped<IPedidoGateway, PedidoGateway>();
 
-            services.AddScoped<IProdutoItemPedidoRepository, ProdutoItemPedidoRepository>();
-            services.AddScoped<IProdutoItemRepository, ProdutoItemRepository>();
-            services.AddScoped<IProdutoRepository, ProdutoRepository>();
-            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+            services.AddScoped<IProdutoItemPedidoGateway, ProdutoItemPedidoGateway>();
+            services.AddScoped<IProdutoItemGateway, ProdutoItemGateway>();
+            services.AddScoped<IProdutoGateway, ProdutoGateway>();
+            services.AddScoped<IUsuarioGateway, UsuarioGateway>();
 
             //Repositories MongoDB
             services.AddSingleton<IMondoDBContext, MondoDBContext>();
-            services.AddScoped<IPedidoStatusRepository, PedidoStatusRepository>();
-            services.AddScoped<IPagamentoStatusRepository, PagamentoStatusRepository>();
-            services.AddScoped<ICarrinhoRepository, CarrinhoRepository>();
+            services.AddScoped<IPedidoStatusGateway, PedidoStatusGateway>();
+            services.AddScoped<IPagamentoStatusGateway, PagamentoStatusGateway>();
+            services.AddScoped<ICarrinhoGateway, CarrinhoGateway>();
 
 
             //UseCases

@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using QuickOrder.Core.Application.Dtos;
 using QuickOrder.Core.Application.UseCases.Pedido.Interfaces;
 using QuickOrder.Core.Domain.Entities;
 
@@ -35,6 +34,7 @@ namespace QuickOrder.Adapters.Driving.Api.Controllers.Pedido
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("consultarpedido/{id}")]
+        [ApiExplorerSettings(IgnoreApi = false)]
         public async Task<IActionResult> ConsultarPedido(int id)
         {
             return Result(await _pedidoObterUseCase.ConsultarPedido(id));
@@ -46,6 +46,7 @@ namespace QuickOrder.Adapters.Driving.Api.Controllers.Pedido
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("consultarlistapedidos")]
+        [ApiExplorerSettings(IgnoreApi = false)]
         public async Task<IActionResult> ConsultarListaPedidos()
         {
             return Result(await _pedidoObterUseCase.ConsultarListaPedidos());
@@ -57,6 +58,7 @@ namespace QuickOrder.Adapters.Driving.Api.Controllers.Pedido
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("statuspagamentopedido/{id}")]
+        [ApiExplorerSettings(IgnoreApi = false)]
         public async Task<IActionResult> ConsultarStatusPagamentoPedido(int id)
         {
             return Result(await _pedidoObterUseCase.ConsultarStatusPagamentoPedido(id));
@@ -67,6 +69,7 @@ namespace QuickOrder.Adapters.Driving.Api.Controllers.Pedido
         /// </summary>
         /// <returns></returns>
         [HttpGet("consultarfilapedidos")]
+        [ApiExplorerSettings(IgnoreApi = false)]
         public async Task<IActionResult> ConsultarFilaPedidos()
         {
             return Result(await _pedidoObterUseCase.ConsultarFilaPedidos());
@@ -78,6 +81,7 @@ namespace QuickOrder.Adapters.Driving.Api.Controllers.Pedido
         /// <param name="numeroPedido"></param>
         /// <returns></returns>
         [HttpPost("criarpedido")]
+        [ApiExplorerSettings(IgnoreApi = false)]
         public async Task<IActionResult> CriarPedido(int? numeroCliente = null)
         {
             return Result(await _pedidoCriarUseCase.CriarPedido(numeroCliente));
@@ -90,6 +94,7 @@ namespace QuickOrder.Adapters.Driving.Api.Controllers.Pedido
         /// <param name="produtoCarrinho"></param>
         /// <returns></returns>
         [HttpPut("adicionaritemaopedido/{id}")]
+        [ApiExplorerSettings(IgnoreApi = false)]
         public async Task<IActionResult> AlterarItemAoPedido(string id, [FromBody] List<ProdutoCarrinho> produtoCarrinho)
         {
             return Result(await _pedidoAtualizarUseCase.AlterarItemAoPedido(id, produtoCarrinho));
@@ -101,6 +106,7 @@ namespace QuickOrder.Adapters.Driving.Api.Controllers.Pedido
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpPut("confirmapedido/{id}")]
+        [ApiExplorerSettings(IgnoreApi = false)]
         public async Task<IActionResult> ConfirmarPedido(int id)
         {
             return Result(await _pedidoAtualizarUseCase.ConfirmarPedido(id));
@@ -112,6 +118,7 @@ namespace QuickOrder.Adapters.Driving.Api.Controllers.Pedido
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpPut("confirmapagamentopedido/{id}")]
+        [ApiExplorerSettings(IgnoreApi = false)]
         public async Task<IActionResult> ConfirmarPagamentoPedido(int id)
         {
             return Result(await _pedidoAtualizarUseCase.ConfirmarPagamentoPedido(id));
@@ -124,6 +131,7 @@ namespace QuickOrder.Adapters.Driving.Api.Controllers.Pedido
         /// <param name="status"></param>
         /// <returns></returns>
         [HttpPut("alterarstatuspedido/{id}")]
+        [ApiExplorerSettings(IgnoreApi = false)]
         public async Task<IActionResult> AlterarStatusPedido(int id, string pedidoStatus)
         {
             return Result(await _pedidoAtualizarUseCase.AlterarStatusPedido(id, pedidoStatus));
@@ -135,6 +143,7 @@ namespace QuickOrder.Adapters.Driving.Api.Controllers.Pedido
         /// <param name="carrinhoId"></param>
         /// <returns></returns>
         [HttpDelete("cancelarpedido/{carrinhoId}")]
+        [ApiExplorerSettings(IgnoreApi = false)]
         public async Task<IActionResult> CancelarPedido(string carrinhoId)
         {
             return Result(await _pedidoExcluirUseCase.CancelarPedido(carrinhoId));

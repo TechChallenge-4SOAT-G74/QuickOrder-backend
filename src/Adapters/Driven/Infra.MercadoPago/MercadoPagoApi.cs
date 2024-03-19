@@ -3,7 +3,7 @@ using Microsoft.Extensions.Options;
 using QuickOrder.Adapters.Driven.MercadoPago.Interfaces;
 using QuickOrder.Adapters.Driven.MercadoPago.Requests;
 using QuickOrder.Adapters.Driven.MercadoPago.Responses;
-using QuickOrder.Core.Domain.Entities;
+using QuickOrder.Core.Domain.Entities.Base;
 
 namespace QuickOrder.Adapters.Driven.MercadoPago
 {

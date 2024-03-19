@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using QuickOrder.Core.Domain.Entities;
+using QuickOrder.Core.Domain.Entities.Base;
 
 namespace QuickOrder.Adapters.Driven.PostgresDB.Core
 {

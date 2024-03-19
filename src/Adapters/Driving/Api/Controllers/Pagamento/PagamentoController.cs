@@ -19,6 +19,7 @@ namespace QuickOrder.Adapters.Driving.Api.Controllers.Pagamento
         /// <param name="idPedido"></param>
         /// <returns></returns>
         [HttpGet("gerarqrcodepagamento/{idPedido}")]
+        [ApiExplorerSettings(IgnoreApi = false)]
         public async Task<IActionResult> GerarQrCodePagamento(int idPedido)
         {
             return Result(await _pagamentoUseCase.GerarQrCodePagamento(idPedido));

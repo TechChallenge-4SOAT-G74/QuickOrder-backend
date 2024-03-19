@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      containers:
+        - name: quickorderdb-postgresql
+          image: postgres:latest
+          ports:
+            - containerPort: 5432
+          env:
+            - name: ASPNETCORE_ENVIRONMENT
+              value: Production
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: quickorder-secrets
+                  key: postgres_username
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: quickorder-secrets
+                  key: postgres_password
+            - name: POSTGRES_DB
+              valueFrom:
+                secretKeyRef:
+                  name: quickorder-secrets
+                  key: postgres_db
+          volumeMounts:
+            - name: quickorderdb-postgresql-volume
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: quickorderdb-postgresql-volume
+          persistentVolumeClaim:
+            claimName: postgres-pvc

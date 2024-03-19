@@ -1,5 +1,5 @@
 ﻿using QuickOrder.Adapters.Driven.MercadoPago.Responses;
-using QuickOrder.Core.Application.Dtos;
+using QuickOrder.Core.Application.Dtos.Base;
 using QuickOrder.Core.Domain.Entities;
 
 namespace QuickOrder.Core.Application.UseCases.Pedido.Interfaces
