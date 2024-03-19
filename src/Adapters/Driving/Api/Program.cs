@@ -34,7 +34,7 @@ var migrationTable = "__IntegradorPlurallMigrationsHistory";
 DatabaseSettings databaseSettings = new DatabaseSettings();
 
 var secretName = "postgres-db-secret_1";
-var region = "us-east-1"; // ou a região onde seu segredo está armazenado
+var region = "us-east-1"; // ou a regiÃ£o onde seu segredo estÃ¡ armazenado
 
 var client = new AmazonSecretsManagerClient(RegionEndpoint.GetBySystemName(region));
 
@@ -112,7 +112,7 @@ builder.Services.AddControllers()
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "QuickOrder.Api", Version = "v1" });
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "QuickOrder.Api", Version = "v2" });
 });
 
 var app = builder.Build();
