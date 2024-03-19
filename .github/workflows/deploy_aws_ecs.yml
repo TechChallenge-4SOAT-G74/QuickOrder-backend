@@ -11,7 +11,7 @@ env:
   ECR_REPOSITORY: quickorder           
   ECS_SERVICE: quickorder-api                  
   ECS_CLUSTER: my-ecs                 
-  ECS_TASK_DEFINITION: quickorder-api 
+  ECS_TASK_DEFINITION: quickorder-api:9 
                                               
   CONTAINER_NAME: quickorder           
                                               
