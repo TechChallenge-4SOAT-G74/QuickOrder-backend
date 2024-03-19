@@ -8,12 +8,12 @@ on:
 
 env:
   AWS_REGION: us-east-1                 
-  ECR_REPOSITORY: quickorder-backend           
-  ECS_SERVICE: MY_ECS_SERVICE                 
-  ECS_CLUSTER: MY_ECS_CLUSTER                 
-  ECS_TASK_DEFINITION: MY_ECS_TASK_DEFINITION 
+  ECR_REPOSITORY: quickorder           
+  ECS_SERVICE: quickorder-api                  
+  ECS_CLUSTER: my-ecs                 
+  ECS_TASK_DEFINITION: quickorder-api 
                                               
-  CONTAINER_NAME: MY_CONTAINER_NAME           
+  CONTAINER_NAME: quickorder           
                                               
 
 jobs:
