@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Options;
 using MongoDB.Driver;
-using QuickOrder.Core.Domain.Entities;
+using QuickOrder.Core.Domain.Entities.Base;
 
 namespace QuickOrder.Adapters.Driven.MongoDB.Core
 {

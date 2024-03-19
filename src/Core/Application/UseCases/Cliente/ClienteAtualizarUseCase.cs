@@ -1,4 +1,5 @@
 ﻿using QuickOrder.Core.Application.Dtos;
+using QuickOrder.Core.Application.Dtos.Base;
 using QuickOrder.Core.Application.UseCases.Cliente.Interfaces;
 using QuickOrder.Core.Domain.Enums;
 using QuickOrder.Core.Domain.Repositories;
@@ -9,11 +10,11 @@ namespace QuickOrder.Core.Application.UseCases.Cliente
 {
     public class ClienteAtualizarUseCase : IClienteAtualizarUseCase
     {
-        private readonly IClienteRepository _clienteRepository;
+        private readonly IClienteGateway _clienteGateway;
 
-        public ClienteAtualizarUseCase(IClienteRepository clienteRepository)
+        public ClienteAtualizarUseCase(IClienteGateway clienteGateway)
         {
-            _clienteRepository = clienteRepository;
+            _clienteGateway = clienteGateway;
         }
 
         public async Task<ServiceResult> Execute(ClienteDto clienteDto, int id)
@@ -21,7 +22,7 @@ namespace QuickOrder.Core.Application.UseCases.Cliente
             ServiceResult result = new();
             try
             {
-                var clienteExiste = await _clienteRepository.GetFirst(id);
+                var clienteExiste = await _clienteGateway.GetFirst(id);
 
                 if (clienteExiste == null)
                 {
@@ -35,7 +36,7 @@ namespace QuickOrder.Core.Application.UseCases.Cliente
                 clienteExiste.DataNascimento = clienteDto?.DataNascimento;
                 clienteExiste.Usuario = usuario;
 
-                await _clienteRepository.Update(clienteExiste);
+                await _clienteGateway.Update(clienteExiste);
 
             }
             catch (Exception ex) { result.AddError(ex.Message); }

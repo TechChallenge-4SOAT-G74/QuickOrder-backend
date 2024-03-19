@@ -1,4 +1,5 @@
 ﻿using QuickOrder.Core.Application.Dtos;
+using QuickOrder.Core.Application.Dtos.Base;
 using QuickOrder.Core.Application.UseCases.Funcionario.Interfaces;
 using QuickOrder.Core.Domain.Enums;
 using QuickOrder.Core.Domain.Repositories;
@@ -8,11 +9,11 @@ namespace QuickOrder.Core.Application.UseCases.Funcionario
 {
     public class FuncionarioAtualizarUseCase : IFuncionarioAtualizarUseCase
     {
-        private readonly IFuncionarioRepository _funcionarioRepository;
+        private readonly IFuncionarioGateway _funcionarioGateway;
 
-        public FuncionarioAtualizarUseCase(IFuncionarioRepository funcionarioRepository)
+        public FuncionarioAtualizarUseCase(IFuncionarioGateway funcionarioGateway)
         {
-            _funcionarioRepository = funcionarioRepository;
+            _funcionarioGateway = funcionarioGateway;
         }
 
         public async Task<ServiceResult> Execute(FuncionarioDto funcionarioDto, int id)
@@ -20,7 +21,7 @@ namespace QuickOrder.Core.Application.UseCases.Funcionario
             ServiceResult result = new();
             try
             {
-                var funcionarioExiste = await _funcionarioRepository.GetFirst(id);
+                var funcionarioExiste = await _funcionarioGateway.GetFirst(id);
 
                 if (funcionarioExiste == null)
                 {
@@ -32,7 +33,7 @@ namespace QuickOrder.Core.Application.UseCases.Funcionario
                 funcionarioExiste.Usuario = usuario;
 
 
-                await _funcionarioRepository.Update(funcionarioExiste);
+                await _funcionarioGateway.Update(funcionarioExiste);
 
             }
             catch (Exception ex) { result.AddError(ex.Message); }

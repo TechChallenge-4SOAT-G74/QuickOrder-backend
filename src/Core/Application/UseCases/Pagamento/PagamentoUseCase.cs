@@ -2,6 +2,7 @@
 using QuickOrder.Adapters.Driven.MercadoPago.Requests;
 using QuickOrder.Adapters.Driven.MercadoPago.Responses;
 using QuickOrder.Core.Application.Dtos;
+using QuickOrder.Core.Application.Dtos.Base;
 using QuickOrder.Core.Application.UseCases.Pagamento.Interfaces;
 using QuickOrder.Core.Application.UseCases.Pedido.Interfaces;
 using QuickOrder.Core.Domain.Adapters;
@@ -13,17 +14,17 @@ namespace QuickOrder.Core.Application.UseCases.Pagamento
 {
     public class PagamentoUseCase : IPagamentoUseCase
     {
-        private readonly IPagamentoStatusRepository _statusRepository;
+        private readonly IPagamentoStatusGateway _statusGateway;
         private readonly IPedidoObterUseCase _pedidoObterUseCase;
         private readonly IMercadoPagoApi _mercadoPagoApi;
-        private readonly IPedidoStatusRepository _pedidoStatusRepository;
+        private readonly IPedidoStatusGateway _pedidoStatusGateway;
 
-        public PagamentoUseCase(IPagamentoStatusRepository statusRepository, IPedidoObterUseCase pedidoObterUseCase, IMercadoPagoApi mercadoPagoApi, IPedidoStatusRepository pedidoStatusRepository)
+        public PagamentoUseCase(IPagamentoStatusGateway statusGateway, IPedidoObterUseCase pedidoObterUseCase, IMercadoPagoApi mercadoPagoApi, IPedidoStatusGateway pedidoStatusGateway)
         {
-            _statusRepository = statusRepository;
+            _statusGateway = statusGateway;
             _pedidoObterUseCase = pedidoObterUseCase;
             _mercadoPagoApi = mercadoPagoApi;
-            _pedidoStatusRepository = pedidoStatusRepository;
+            _pedidoStatusGateway = pedidoStatusGateway;
         }
 
         public async Task VerificaPagamento(WebHookData whData)
@@ -68,7 +69,7 @@ namespace QuickOrder.Core.Application.UseCases.Pagamento
 
         public async Task<bool> AtualizarStatusPagamento(string numeroPedido, int statusPagamento)
         {
-            var pedido = await _statusRepository.GetValue("NumeroPedido", numeroPedido);
+            var pedido = await _statusGateway.GetValue("NumeroPedido", numeroPedido);
 
             if (pedido != null)
             {
@@ -80,12 +81,12 @@ namespace QuickOrder.Core.Application.UseCases.Pagamento
                     StatusPagamento = EStatusPagamentoExtensions.ToDescriptionString((EStatusPagamento)statusPagamento),
                     DataAtualizacao = DateTime.Now
                 };
-                _statusRepository.Update(pagamentoStatus);
+                _statusGateway.Update(pagamentoStatus);
 
                 if ((EStatusPagamento)statusPagamento == EStatusPagamento.Aprovado)
                 {
                     var pedidoStatus = new PedidoStatus((int)Convert.ToUInt32(pedido.NumeroPedido), EStatusPedidoExtensions.ToDescriptionString(EStatusPedido.Recebido), DateTime.Now);
-                    _pedidoStatusRepository.Update(pedidoStatus);
+                    _pedidoStatusGateway.Update(pedidoStatus);
                 }
 
             }
@@ -106,10 +107,10 @@ namespace QuickOrder.Core.Application.UseCases.Pagamento
                 ChavePagamento = paymentQrCode.in_store_order_id,
                 QrCodePayment = paymentQrCode.qr_data
             };
-            await _statusRepository.Create(pagamentoStatus);
+            await _statusGateway.Create(pagamentoStatus);
 
             var pedidoStatus = new PedidoStatus((int)Convert.ToUInt32(sacolaDto.NumeroPedido), EStatusPedidoExtensions.ToDescriptionString(EStatusPedido.PendentePagamento), DateTime.Now);
-            _pedidoStatusRepository.Update(pedidoStatus);
+            _pedidoStatusGateway.Update(pedidoStatus);
         }
 
         public async Task<ServiceResult<PaymentQrCodeResponse>> GerarQrCodePagamento(int idPedido)

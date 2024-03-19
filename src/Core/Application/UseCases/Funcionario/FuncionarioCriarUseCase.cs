@@ -1,4 +1,5 @@
 ﻿using QuickOrder.Core.Application.Dtos;
+using QuickOrder.Core.Application.Dtos.Base;
 using QuickOrder.Core.Application.UseCases.Funcionario.Interfaces;
 using QuickOrder.Core.Domain.Enums;
 using QuickOrder.Core.Domain.Repositories;
@@ -9,11 +10,11 @@ namespace QuickOrder.Core.Application.UseCases.Funcionario
 {
     public class FuncionarioCriarUseCase : IFuncionarioCriarUseCase
     {
-        private readonly IFuncionarioRepository _funcionarioRepository;
+        private readonly IFuncionarioGateway _funcionarioGateway;
 
-        public FuncionarioCriarUseCase(IFuncionarioRepository funcionarioRepository)
+        public FuncionarioCriarUseCase(IFuncionarioGateway funcionarioGateway)
         {
-            _funcionarioRepository = funcionarioRepository;
+            _funcionarioGateway = funcionarioGateway;
         }
 
         public async Task<ServiceResult> Execute(FuncionarioDto funcionarioDto)
@@ -21,7 +22,7 @@ namespace QuickOrder.Core.Application.UseCases.Funcionario
             ServiceResult result = new();
             try
             {
-                var funcionarioExiste = await _funcionarioRepository.GetFirst(x => x.Usuario.Nome.Equals(funcionarioDto.Nome) && x.Usuario.Cpf.Equals(funcionarioDto.Cpf));
+                var funcionarioExiste = await _funcionarioGateway.GetFirst(x => x.Usuario.Nome.Equals(funcionarioDto.Nome) && x.Usuario.Cpf.Equals(funcionarioDto.Cpf));
                 if (funcionarioExiste != null)
                 {
                     result.AddError("funcionario já existe.");
@@ -31,7 +32,7 @@ namespace QuickOrder.Core.Application.UseCases.Funcionario
                 var usuario = new UsuarioEntity(funcionarioDto.Nome, funcionarioDto.Cpf, funcionarioDto.Email, true, (int)(ERole)Enum.Parse(typeof(ERole), funcionarioDto.Role));
                 var funcionario = new FuncionarioEntity(matricula, usuario);
 
-                var funcionarioInsert = await _funcionarioRepository.Insert(funcionario);
+                var funcionarioInsert = await _funcionarioGateway.Insert(funcionario);
 
             }
             catch (Exception ex) { result.AddError(ex.Message); }

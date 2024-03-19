@@ -1,0 +1,59 @@
+name: Deploy to AWS
+
+on:
+  pull_request:
+    branches: [ main ]
+env:
+  ECR_REPOSITORY: quickorder-backend
+  EKS_CLUSTER_NAME: quickorder-eks 
+  AWS_REGION: us-east-1
+
+jobs:
+  deploy_eks:
+    runs-on: ubuntu-latest
+    if: false
+    steps:
+    - name: Set short git commit SHA
+      id: commit
+      uses: prompt/actions-commit-hash@v2
+
+    - name: Check out code
+      uses: actions/checkout@v3
+    
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4.0.2
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{env.AWS_REGION}}
+
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+  
+    - name: Build, tag, and push image to Amazon ECR
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}        
+        IMAGE_TAG: ${{ steps.commit.outputs.short }}
+      run: |
+         cd src
+         docker build -f Adapters/Driving/Api/Dockerfile -t ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:${{env.IMAGE_TAG}} -t ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}:latest .
+         docker push -a ${{env.ECR_REGISTRY}}/${{env.ECR_REPOSITORY}}
+
+    - name: Update kube config
+      run: aws eks update-kubeconfig --name ${{env.EKS_CLUSTER_NAME}} --region ${{env.AWS_REGION}}
+
+    - name: Deploy to EKS
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}        
+        IMAGE_TAG: ${{ steps.commit.outputs.short }}
+      run: |
+        kubectl apply -f scripts/ks8/01-pvc/01-pvc-postgres.yml 
+        kubectl apply -f scripts/ks8/01-pvc/02-pvc-mongo.yml 
+        kubectl apply -f scripts/ks8/02-deployments/03-secrets.yml 
+        kubectl apply -f scripts/ks8/02-deployments/04-postgres-deploy.yml
+        kubectl apply -f scripts/ks8/02-deployments/05-mongo-deploy.yml
+        kubectl apply -f scripts/ks8/02-deployments/06-quick-order-deployment.yml
+        kubectl apply -f scripts/ks8/03-services/06-postgres-service.yml
+        kubectl apply -f scripts/ks8/03-services/07-mongo-service.yml
+        kubectl apply -f scripts/ks8/03-services/08-quick-order-service.yml

@@ -1,4 +1,5 @@
 ﻿using QuickOrder.Core.Application.Dtos;
+using QuickOrder.Core.Application.Dtos.Base;
 using QuickOrder.Core.Application.UseCases.Produto.Interfaces;
 using QuickOrder.Core.Domain.Enums;
 using QuickOrder.Core.Domain.Repositories;
@@ -7,11 +8,11 @@ namespace QuickOrder.Core.Application.UseCases.Produto
 {
     public class ProdutoObterUseCase : ProdutoUseCase, IProdutoObterUseCase
     {
-        private readonly IProdutoRepository _produtoRepository;
+        private readonly IProdutoGateway _produtoGateway;
 
-        public ProdutoObterUseCase(IProdutoRepository produtoRepository)
+        public ProdutoObterUseCase(IProdutoGateway produtoGateway)
         {
-            _produtoRepository = produtoRepository;
+            _produtoGateway = produtoGateway;
         }
 
         public async Task<ServiceResult<List<ProdutoDto>>> Execute()
@@ -19,7 +20,7 @@ namespace QuickOrder.Core.Application.UseCases.Produto
             ServiceResult<List<ProdutoDto>> result = new();
             try
             {
-                var produtos = await _produtoRepository.GetAll();
+                var produtos = await _produtoGateway.GetAll();
 
                 var list = new List<ProdutoDto>();
 
@@ -47,7 +48,7 @@ namespace QuickOrder.Core.Application.UseCases.Produto
             ServiceResult<ProdutoDto> result = new();
             try
             {
-                var produto = await _produtoRepository.GetFirst(id);
+                var produto = await _produtoGateway.GetFirst(id);
                 result.Data = new ProdutoDto
                 {
                     Categoria = ECategoriaExtensions.ToDescriptionString((ECategoria)produto.CategoriaId),
