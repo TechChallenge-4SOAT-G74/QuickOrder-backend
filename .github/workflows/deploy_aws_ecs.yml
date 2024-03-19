@@ -1,8 +1,6 @@
 name: Deploy to Amazon ECS
 
 on:
-  push:
-    branches: [ main, feature/deploy_aws ]
   pull_request:
     branches: [ main ]
 
