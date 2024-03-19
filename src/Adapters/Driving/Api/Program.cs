@@ -33,7 +33,7 @@ var migrationTable = "__IntegradorPlurallMigrationsHistory";
 
 DatabaseSettings databaseSettings = new DatabaseSettings();
 
-var secretName = "postgres-db-secret";
+var secretName = "postgres-db-secret_1";
 var region = "us-east-1"; // ou a região onde seu segredo está armazenado
 
 var client = new AmazonSecretsManagerClient(RegionEndpoint.GetBySystemName(region));
